@@ -1849,7 +1849,6 @@ html[data-fls-darklite-dark] .contact__body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  background: url("../assets/img/textures/wood-01.webp") 50% 50%/cover repeat;
 }
 .header__decor {
   opacity: 0;
@@ -2558,9 +2557,6 @@ html[data-fls-darklite-dark] {
   [data-fls-menu-open] .icon-menu::after {
     bottom: calc(50% - 0.0625rem);
     transform: translate(50%, 0) rotate(45deg);
-  }
-  .header__background-image {
-    background: url("../assets/img/textures/wood-01-small.webp") 50% 50%/cover repeat;
   }
   .header__decor-image--big {
     display: none;

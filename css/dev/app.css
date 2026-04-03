@@ -1526,7 +1526,13 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
 .spollers__title {
   position: relative;
   background: #131315;
-  color: white;
+  color: #fff;
+}
+[data-fls-darklite-light] .spollers__title {
+  background: #a7a7a7;
+  color: #131315;
+}
+.spollers__title {
   z-index: 1;
   border-radius: 0.3125rem;
 }
@@ -1537,6 +1543,11 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
   border-radius: inherit;
   pointer-events: none;
   background: radial-gradient(50rem circle at var(--x-px) var(--y-px), rgba(40, 35, 126, 0.5882352941), transparent 40%);
+}
+[data-fls-darklite-light] .spollers__title::after {
+  background: radial-gradient(50rem circle at var(--x-px) var(--y-px), rgba(171, 88, 238, 0.7803921569), transparent 40%);
+}
+.spollers__title::after {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -1548,6 +1559,12 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
 .spollers__body {
   border-radius: 0.3125rem;
   background: rgba(19, 19, 21, 0.7803921569);
+}
+[data-fls-darklite-light] .spollers__body {
+  color: #131315;
+  background: rgba(194, 194, 194, 0.7607843137);
+}
+.spollers__body {
   position: relative;
   z-index: 3;
 }
@@ -1694,6 +1711,9 @@ html[data-fls-darklite-dark] .contact__body {
   background-color: #28237e;
   opacity: 0;
   transition: all 0.3s;
+}
+[data-fls-darklite-light] .tabs__title::after {
+  background-color: #ab58ee;
 }
 .tabs__title:hover {
   color: #cccccc;
@@ -3880,7 +3900,7 @@ html[data-fls-darklite-dark] {
   .spollers__item {
     --x-px: calc(var(--x) * 0.0625rem);
     --y-px: calc(var(--y) * 0.0625rem);
-    --border: 0.125rem;
+    --border: 0.1875rem;
     position: relative;
     overflow: hidden;
     padding: var(--border);
@@ -3902,6 +3922,11 @@ html[data-fls-darklite-dark] {
   }
   .spollers__item::before {
     background: radial-gradient(50rem circle at var(--x-px) var(--y-px), rgba(40, 35, 126, 0.7803921569), transparent 40%);
+  }
+  [data-fls-darklite-light] .spollers__item::before {
+    background: radial-gradient(50rem circle at var(--x-px) var(--y-px), rgba(171, 88, 238, 0.7803921569), transparent 40%);
+  }
+  .spollers__item::before {
     z-index: 1;
   }
   .spollers__item:hover .spollers__title::after {

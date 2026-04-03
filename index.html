@@ -8,8 +8,8 @@
 		<link rel="preload" href="./assets/fonts/Cinzel.woff2" as="font" type="font/woff2" defer>
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script defer src="./js/app.min.js?v=1774847191190"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1774847191190">
+		<script defer src="./js/app.min.js?v=1775192855820"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1775192855820">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -58,9 +58,16 @@
 											</a>
 										</li>
 										<li class="menu__item">
+											<a href="#" class="menu__link" data-fls-scrollto=".faq">
+												<span class="menu__link-decor">h</span>
+												<span data-i18n="menu.link.faq">FAQ</span>
+												<span class="menu__link-decor">r</span>
+											</a>
+										</li>
+										<li class="menu__item">
 											<a href="#" class="menu__link" data-fls-scrollto=".contact">
 												<span class="menu__link-decor">o</span>
-												<span data-i18n="menu.link.contact">Contact</span>
+												<span data-i18n="menu.link.contact">get started</span>
 												<span class="menu__link-decor">i</span>
 											</a>
 										</li>
@@ -188,59 +195,19 @@
 										<h2 class="about__title title">About me</h2>
 									</div>
 									<div class="about__text">
-										Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae commodi ipsa iste nisi
-                        ullam asperiores impedit beatae!
-                        Sapiente veritatis voluptatum culpa, quod qui voluptas officiis ipsa debitis minus. Suscipit
-                        ratione ducimus officiis optio
-                        expedita, obcaecati qui quae repudiandae temporibus enim omnis cum molestias beatae quo aliquam
-                        voluptate aut deserunt ex vel
-                        error ullam itaque ut! Ea, blanditiis deserunt ex molestiae laboriosam natus saepe veniam
-                        ratione dicta, libero omnis nisi
-                        dolorum. Expedita temporibus explicabo porro mollitia iusto quisquam nobis ex fugit amet,
-                        dignissimos aliquid consectetur
-                        libero quas. Harum rem asperiores, eveniet et aliquid doloribus officia quas inventore quam
-                        accusamus perferendis est ipsum
-                        dolore illo nihil obcaecati provident ipsa voluptatum esse delectus vitae deserunt. Sapiente id
-                        quasi consequatur delectus
-                        perferendis ducimus molestiae accusamus omnis, accusantium, dicta libero dignissimos labore
-                        voluptas. Perspiciatis nobis
-                        exercitationem quas numquam voluptates velit reiciendis placeat illum necessitatibus eius
-                        repudiandae, natus nemo magni atque
-                        suscipit, ea vitae dolor mollitia modi iure minus. Velit omnis quas, quibusdam alias
-                        consequatur, ipsum dolorum ullam repellat
-                        qui molestias nesciunt aperiam possimus commodi libero quisquam. Modi dolorem magnam quam iste,
-                        velit maiores dolorum
-                        molestias dolores eligendi reiciendis in obcaecati incidunt debitis officia amet blanditiis ea
-                        ipsam minima laborum. Ipsam,
-                        beatae temporibus fugiat culpa cupiditate cumque officia, nulla veniam aliquid laudantium nemo
-                        suscipit doloremque! Quis
-                        maiores vero temporibus, est eveniet rerum placeat aliquid nulla saepe et! Sit illo molestias
-                        voluptates exercitationem cum
-                        esse harum voluptatibus, sintiatur sapiente nam consequatur quos aliquid odit
-                        rerum sed consectetur inventore laudantium accusamus ipsam! Animi assumenda numquam dolorum,
-                        tempore minus ab unde similique.
-                        Eum beatae placeat dolorem eius architecto consequuntur laboriosam perferendis temporibus.
-                        Pariatur culpa placeat ducimus.
-                        Quisquam eligendi quasi doloribus cu, est eveniet rerum placeat aliquid nulla saepe et! Sit illo
-                        molestias voluptates
-                        exercitationem cum
-                        esse harum voluptatibus, sintiatur sapiente nam consequatur quos aliquid odit
-                        rerum sed consectetur inventore laudantium accusamus ipsam! Animi assumenda numquam dolorum,
-                        tempore minus ab unde similique.
-                        Eum beatae placeat dolorem eius architecto consequuntur laboriosam perferendis temporibus.
-                        Pariatur culpa placeat ducimus.
-                        Quisquam eligendi quasi doloribus cu, est eveniet rerum placeat aliquid nulla saepe et! Sit illo
-                        molestias voluptates
-                        exercitationem cum
-                        esse harum voluptatibus, sintiatur sapiente nam consequatur quos aliquid odit
-                        rerum sed consectetur inventore laudantium accusamus ipsam! Animi assumenda numquam dolorum,
-                        tempore minus ab unde similique.
-                        Eum beatae placeat dolorem eius architecto consequuntur laboriosam perferendis temporibus.
-                        Pariatur culpa placeat ducimus.
-                        Quisquam eligendi quasi doloribus cupiditate iste qui, voluptas nesciunt explicabo atque quos
-                        nobis aliquid repellat
-                        voluptatum! Voluptatibus dignissimos accusantium corrupti esse a error quis provident fuga quas
-                        dolorum maiores, debitis vero?
+										<p>
+											Hi! My name is Ivan. I’m originally from Ukraine and now live in Germany. I’ve explored
+                            different areas in IT and found web development to be the one I enjoy the most.
+										</p>
+										<p>
+											Over time, I
+                            noticed that many websites are built using page builders and pre-made themes, which often
+                            results in slow performance, unnecessary complexity, and limited flexibility. I take a
+                            different
+                            approach - I build websites from scratch, writing all code manually. This allows me to
+                            create
+                            fast and secure websites with very custom design.
+										</p>
 									</div>
 								</div>
 								<div class="about__media media-about">
@@ -614,7 +581,249 @@ alt="stone background">
 							</div>
 						</div>
 					</section>
-					<div class="divider"></div>
+					<section class="page__faq faq">
+						<div class="faq__container">
+							<div class="faq__title-box title-box">
+								<h2 class="faq__title title">FAQ</h2>
+							</div>
+							<div class="faq__body">
+								<div data-fls-tabs="" class="tabs">
+									<div data-fls-tabs-titles="" class="tabs__navigation">
+										<button type="button" class="tabs__title --tab-active">Websites</button>
+										<button type="button" class="tabs__title">Plans</button>
+										<button type="button" class="tabs__title">Payments</button>
+									</div>
+									<div data-fls-tabs-body="" class="tabs__content">
+										<div class="tabs__body">
+											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															How long does the process take from start to
+                                            finish?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+													</div>
+													<!-- <div class="spollers__decor"></div> -->
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															On subscriptions, once I’m done with the 12
+                                            month
+                                            minimum, do
+                                            I continue paying after that?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+													<!-- <div class="spollers__decor"></div> -->
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Hic,
+                                            asperiores.
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+													<!-- <div class="spollers__decor"></div> -->
+												</details>
+											</div>
+										</div>
+										<div class="tabs__body">
+											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															How long does the process take from start to
+                                            finish?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+                                        nam repellendus ullam deserunt quisquam! Laudantium similique temporibus fugiat
+                                        suscipit
+                                        vero impedit ipsam debitis maxime commodi, earum cupiditate repudiandae pariatur
+                                        dolor minus
+                                        consequuntur dolorem libero quis? Dignissimos iure debitis laborum dolor iste
+                                        harum
+                                        assumenda alias odio! Vel saepe adipisci atque? Accusantium minus earum dolor
+                                        aut, dolore
+                                        eaque cupiditate, quos eveniet excepturi fugiat repellat dicta totam, laborum
+                                        nemo? Minima
+                                        explicabo saepe earum debitis enim a suscipit possimus, ea consectetur! Eius
+                                        facere, ipsam
+                                        enim dicta omnis ducimus quasi odio praesentium.
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															On subscriptions, once I’m done with the 12
+                                            month
+                                            minimum, do
+                                            I continue paying after that?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Hic,
+                                            asperiores.
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Hic,
+                                            asperiores.
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+											</div>
+										</div>
+										<div class="tabs__body">
+											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															How long does the process take from start to
+                                            finish?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+                                        nam repellendus ullam deserunt quisquam! Laudantium similique temporibus fugiat
+                                        suscipit
+                                        vero impedit ipsam debitis maxime commodi, earum cupiditate repudiandae pariatur
+                                        dolor minus
+                                        consequuntur dolorem libero quis? Dignissimos iure debitis laborum dolor iste
+                                        harum
+                                        assumenda alias odio! Vel saepe adipisci atque? Accusantium minus earum dolor
+                                        aut, dolore
+                                        eaque cupiditate, quos eveniet excepturi fugiat repellat dicta totam, laborum
+                                        nemo? Minima
+                                        explicabo saepe earum debitis enim a suscipit possimus, ea consectetur! Eius
+                                        facere, ipsam
+                                        enim dicta omnis ducimus quasi odio praesentium.
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															On subscriptions, once I’m done with the 12
+                                            month
+                                            minimum, do
+                                            I continue paying after that?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Hic,
+                                            asperiores.
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															On subscriptions, once I’m done with the 12
+                                            month
+                                            minimum, do
+                                            I continue paying after that?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>
+															Lorem, ipsum dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Hic,
+                                            asperiores.
+														</span>
+													</summary>
+													<div class="spollers__body">
+														Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. A dolorum,
+                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
+                                        iusto libero
+													</div>
+												</details>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 					<section class="page__contact contact">
 						<div class="contact__bg">
 							<img class="contact__bg-image" alt="table background" src="./assets/img/projects/table.webp">

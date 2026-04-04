@@ -8,8 +8,8 @@
 		<link rel="preload" href="./assets/fonts/Cinzel.woff2" as="font" type="font/woff2" defer>
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script defer src="./js/app.min.js?v=1775201858516"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1775201858516">
+		<script defer src="./js/app.min.js?v=1775301722821"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1775301722821">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -140,21 +140,26 @@
 							<div class="hero__image hero__image--dark"></div>
 							<div class="hero__image hero__image--light"></div>
 						</div>
-						<div data-fls-mouse="" data-fls-mouse-dxr="" data-fls-mouse-dyr="" data-fls-mouse-cx="500" data-fls-mouse-cy="1000" class="hero__layer hero__layer--1">
-							<div data-fls-parallax="" data-fls-parallax-coefficient="4" class="hero__grass hero__grass--01"></div>
-						</div>
-						<div class="hero__layer hero__layer--2">
-							<div class="hero__tree hero__tree-01 hero__tree-01--light"></div>
-							<div class="hero__tree hero__tree-01 hero__tree-01--dark"></div>
-						</div>
-						<div class="hero__layer hero__layer--3">
-							<div class="hero__tree hero__tree-02 hero__tree-02--light"></div>
-							<div class="hero__tree hero__tree-02 hero__tree-02--dark"></div>
-						</div>
-						<div class="hero__layer hero__layer--4">
-							<div class="hero__tree hero__tree-03 hero__tree-03--light"></div>
-							<div class="hero__tree hero__tree-03 hero__tree-03--dark"></div>
-						</div>
+						<!--
+<div data-fls-mouse data-fls-mouse-dxr data-fls-mouse-dyr data-fls-mouse-cx="500" data-fls-mouse-cy="1000"
+class="hero__layer hero__layer--1">
+<div data-fls-parallax data-fls-parallax-coefficient="4" class="hero__grass hero__grass--01"></div>
+</div>
+-->
+						<!--
+<div class="hero__layer hero__layer--2">
+<div class="hero__tree hero__tree-01 hero__tree-01--light"></div>
+<div class="hero__tree hero__tree-01 hero__tree-01--dark"></div>
+</div>
+<div class="hero__layer hero__layer--3">
+<div class="hero__tree hero__tree-02 hero__tree-02--light"></div>
+<div class="hero__tree hero__tree-02 hero__tree-02--dark"></div>
+</div>
+<div class="hero__layer hero__layer--4">
+<div class="hero__tree hero__tree-03 hero__tree-03--light"></div>
+<div class="hero__tree hero__tree-03 hero__tree-03--dark"></div>
+</div>
+-->
 						<div data-fls-mouse="" data-fls-mouse-dxr="" data-fls-mouse-dyr="" data-fls-mouse-cx="100" data-fls-mouse-cy="100" class="hero__layer hero__layer--5">
 							<div data-fls-parallax="" data-fls-parallax-coefficient="3" class="hero__layer hero__leaves hero__leaves--01"></div>
 						</div>
@@ -196,7 +201,7 @@
 									</div>
 									<div class="about__text">
 										<p>
-											Hi! My name is Ivan. I’m originally from Ukraine and now live in Germany. I’ve explored
+											Hi! My name is Ivan. I’m originally from Ukraine, live in Germany. I’ve explored
                             different areas in IT and found web development to be the one I enjoy the most.
 										</p>
 										<p>
@@ -594,29 +599,43 @@ alt="stone background">
 										<button type="button" class="tabs__title">Payments</button>
 									</div>
 									<div data-fls-tabs-body="" class="tabs__content">
-										<div class="tabs__body">
+										<div class="tabs__body tabs__body--websites">
 											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">
 														<span>
-															How long does the process take from start to
+															How long does the website take from start to
                                             finish?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit.
+														This depends of the complexity of the website and the
+                                        amount of content. In average, it takes between 2-6 weeks.
 													</div>
 													<!-- <div class="spollers__decor"></div> -->
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
 														<span>
-															On subscriptions, once I’m done with the 12
-                                            month
-                                            minimum, do
-                                            I continue paying after that?
+															Why do you write all code by hand instead of
+                                            using web page builders like the others do?
 														</span>
+													</summary>
+													<div class="spollers__body">
+														First of all, this allows me to create websites with
+                                        unique designs that are not limited by the capabilities of page builders. Second
+                                        - by writing all the code by hand I'm making sure that the code is clean and
+                                        optimized for performance, which is often not the case with page builders. This
+                                        increases load times and performance. Also, because I'm not relying on builders
+                                        and
+                                        there's no need to constantly updage any addons or Wordpress versions, the
+                                        websites I make
+                                        are literally impossible to hack - there's just nothing that can be hacked.
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>Design</span>
 													</summary>
 													<div class="spollers__body">
 														Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -624,16 +643,10 @@ alt="stone background">
                                         quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
                                         iusto libero
 													</div>
-													<!-- <div class="spollers__decor"></div> -->
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Lorem, ipsum dolor sit amet consectetur
-                                            adipisicing elit.
-                                            Hic,
-                                            asperiores.
-														</span>
+														<span>I do not know anything about hosting</span>
 													</summary>
 													<div class="spollers__body">
 														Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -641,53 +654,36 @@ alt="stone background">
                                         quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
                                         iusto libero
 													</div>
-													<!-- <div class="spollers__decor"></div> -->
 												</details>
 											</div>
 										</div>
-										<div class="tabs__body">
+										<div class="tabs__body tabs__body--plans">
 											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">
 														<span>
-															How long does the process take from start to
-                                            finish?
+															Do you charge for desktop and mobile version
+                                            of the website separately?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit. A dolorum,
-                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
-                                        iusto libero
-                                        nam repellendus ullam deserunt quisquam! Laudantium similique temporibus fugiat
-                                        suscipit
-                                        vero impedit ipsam debitis maxime commodi, earum cupiditate repudiandae pariatur
-                                        dolor minus
-                                        consequuntur dolorem libero quis? Dignissimos iure debitis laborum dolor iste
-                                        harum
-                                        assumenda alias odio! Vel saepe adipisci atque? Accusantium minus earum dolor
-                                        aut, dolore
-                                        eaque cupiditate, quos eveniet excepturi fugiat repellat dicta totam, laborum
-                                        nemo? Minima
-                                        explicabo saepe earum debitis enim a suscipit possimus, ea consectetur! Eius
-                                        facere, ipsam
-                                        enim dicta omnis ducimus quasi odio praesentium.
+														No! I create responsive websites, which means that the
+                                        website will adapt to different screen sizes and work well on both desktop and
+                                        mobile devices. It will look great on any device.
 													</div>
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															On subscriptions, once I’m done with the 12
-                                            month
-                                            minimum, do
-                                            I continue paying after that?
-														</span>
+														<span>I want to sell products through my website. Do you offer E-commerce?</span>
+													</summary>
+													<div class="spollers__body">Unfortunately, I do not offer E-commerce at the moment.</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span>The subscription plan, how does it work?</span>
 													</summary>
 													<div class="spollers__body">
-														Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit. A dolorum,
-                                        quam recusandae soluta, obcaecati maxime rerum, quasi eius velit voluptatibus
-                                        iusto libero
+														You pay the monthly fee every month. Minimum contract is 12 months, but you can cancel anytime after that. If you cancel, you don’t keep the site.
 													</div>
 												</details>
 												<details class="spollers__item">
@@ -724,7 +720,7 @@ alt="stone background">
 												</details>
 											</div>
 										</div>
-										<div class="tabs__body">
+										<div class="tabs__body tabs__body--payments">
 											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">

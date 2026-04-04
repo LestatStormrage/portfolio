@@ -1527,6 +1527,7 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
   position: relative;
   background: #131315;
   color: #fff;
+  font-weight: 700;
 }
 [data-fls-darklite-light] .spollers__title {
   background: #a7a7a7;
@@ -1562,7 +1563,7 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
 }
 [data-fls-darklite-light] .spollers__body {
   color: #131315;
-  background: rgba(194, 194, 194, 0.7607843137);
+  background: rgba(255, 255, 255, 0.7607843137);
 }
 .spollers__body {
   position: relative;
@@ -2935,6 +2936,12 @@ html[data-fls-darklite-dark] {
 }
 
 @media (max-width: 61.99875em){
+  .hero__image--dark {
+    background: url("../assets/img/hero/dark/bg-mobile.webp") 50% 50%/cover no-repeat;
+  }
+  .hero__image--light {
+    background: url("../assets/img/hero/light/bg-mobile.webp") 50% 50%/cover no-repeat;
+  }
   .about__container {
     grid-template-columns: 1fr;
   }

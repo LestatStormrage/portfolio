@@ -1657,6 +1657,9 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
   align-self: center;
 }
 
+.button {
+  font-family: var(--fourthFontFamily);
+}
 html[data-fls-darklite-light] .contact__bg-image {
   filter: contrast(1) brightness(0.8);
 }
@@ -2936,12 +2939,6 @@ html[data-fls-darklite-dark] {
 }
 
 @media (max-width: 61.99875em){
-  .hero__image--dark {
-    background: url("../assets/img/hero/dark/bg-mobile.webp") 50% 50%/cover no-repeat;
-  }
-  .hero__image--light {
-    background: url("../assets/img/hero/light/bg-mobile.webp") 50% 50%/cover no-repeat;
-  }
   .about__container {
     grid-template-columns: 1fr;
   }
@@ -3135,6 +3132,12 @@ html[data-fls-darklite-dark] {
   .hero--mobile {
     display: block;
   }
+  .hero__image--dark {
+    background: url("../assets/img/hero/dark/bg-mobile.webp") 50% 50%/cover no-repeat;
+  }
+  .hero__image--light {
+    background: url("../assets/img/hero/light/bg-mobile.webp") 50% 50%/cover no-repeat;
+  }
   .hero__layer--5 {
     top: 30lvh;
     width: 45vw;
@@ -3193,6 +3196,9 @@ html[data-fls-darklite-dark] {
   }
   .form-contact__body {
     grid-template-columns: 1fr;
+  }
+  .form-contact__label {
+    font-weight: 700;
   }
   .form-contact__input {
     min-height: 1.875rem;

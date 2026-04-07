@@ -155,7 +155,7 @@ document.querySelectorAll(".project").forEach((project) => {
   const video = project.querySelector(".project__preview");
   project.addEventListener("mouseenter", () => {
     project.classList.add("active");
-    video.play();
+    if (video) video.play();
   });
   project.addEventListener("mouseleave", () => {
     project.classList.remove("active");

@@ -2984,6 +2984,13 @@ html[data-fls-darklite-dark] {
   html[data-fls-darklite-dark] .projects__quill-image {
     filter: contrast(1) brightness(0.8) drop-shadow(0.9375rem 0rem 0.3125rem rgb(14, 14, 14));
   }
+  [open] .spollers__title {
+    background: rgba(40, 35, 126, 0.5882352941);
+  }
+  .spollers__item[open] {
+    background-color: rgba(40, 35, 126, 0.5882352941);
+    border-radius: 0.3125rem;
+  }
   .menu {
     position: relative;
     border-radius: 0.625rem;

@@ -111,7 +111,7 @@ function moveFirefly(el, group) {
   const x = Math.random() * rect.width;
   const y = Math.random() * rect.height;
   const duration = rand(group.speed[0], group.speed[1]);
-  el.animate(
+  const animation = el.animate(
     [
       { left: el.style.left, top: el.style.top },
       { left: `${x}px`, top: `${y}px` }
@@ -121,11 +121,14 @@ function moveFirefly(el, group) {
       easing: "ease-in-out",
       fill: "forwards"
     }
-  ).onfinish = () => {
-    el.style.left = `${x}px`;
-    el.style.top = `${y}px`;
-    moveFirefly(el, group);
-  };
+  );
+  if (animation) {
+    animation.onfinish = () => {
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+      moveFirefly(el, group);
+    };
+  }
 }
 function colorShift(el, group) {
   const shift = group.hueShift ?? 20;

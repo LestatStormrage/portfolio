@@ -27,6 +27,17 @@
     fetch(link.href, fetchOpts);
   }
 })();
+const featuresEls = document.querySelectorAll(".spollers");
+featuresEls.forEach((featuresEl) => {
+  const featureEls = featuresEl.querySelectorAll(".spollers__item");
+  featuresEl.addEventListener("pointermove", (ev) => {
+    featureEls.forEach((featureEl) => {
+      const rect = featureEl.getBoundingClientRect();
+      featureEl.style.setProperty("--x", ev.clientX - rect.left);
+      featureEl.style.setProperty("--y", ev.clientY - rect.top);
+    });
+  });
+});
 function getHash() {
   if (location.hash) {
     return location.hash.replace("#", "");

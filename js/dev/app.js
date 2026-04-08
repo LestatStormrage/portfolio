@@ -27,6 +27,130 @@
     fetch(link.href, fetchOpts);
   }
 })();
+const fireflyGroups = [
+  {
+    selector: ".firefly--1",
+    amount: 3,
+    // [value range]
+    size: [4, 8],
+    speed: [2e3, 4e3],
+    hueShift: 25,
+    colorSpeed: [3e3, 7e3],
+    glow: [1800, 3500]
+  },
+  {
+    selector: ".firefly--2",
+    amount: 4,
+    size: [6, 12],
+    speed: [7500, 9500],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2500, 4500]
+  },
+  {
+    selector: ".firefly--3",
+    amount: 5,
+    size: [3, 5],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--4",
+    amount: 5,
+    size: [5, 15],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--5",
+    amount: 10,
+    size: [4, 8],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--6",
+    amount: 4,
+    size: [4, 8],
+    speed: [25e3, 35e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  }
+];
+fireflyGroups.forEach((group) => {
+  const containers = document.querySelectorAll(group.selector);
+  if (!containers.length) return;
+  containers.forEach((container) => {
+    const rect = container.getBoundingClientRect();
+    for (let i = 0; i < group.amount; i++) {
+      const el = document.createElement("div");
+      el.classList.add("firefly");
+      const size = rand(group.size[0], group.size[1]);
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+      el.style.left = `${Math.random() * rect.width}px`;
+      el.style.top = `${Math.random() * rect.height}px`;
+      const glowDuration = rand(group.glow[0], group.glow[1]);
+      el.style.animationDuration = `${glowDuration}ms`;
+      el.style.animationDelay = `${-Math.random() * glowDuration}ms`;
+      container.appendChild(el);
+      colorShift(el, group);
+      moveFirefly(el, group);
+    }
+  });
+});
+function moveFirefly(el, group) {
+  const rect = el.parentElement.getBoundingClientRect();
+  const x = Math.random() * rect.width;
+  const y = Math.random() * rect.height;
+  const duration = rand(group.speed[0], group.speed[1]);
+  const animation = el.animate(
+    [
+      { left: el.style.left, top: el.style.top },
+      { left: `${x}px`, top: `${y}px` }
+    ],
+    {
+      duration,
+      easing: "ease-in-out",
+      fill: "forwards"
+    }
+  );
+  if (animation) {
+    animation.onfinish = () => {
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+      moveFirefly(el, group);
+    };
+  }
+}
+function colorShift(el, group) {
+  const shift = group.hueShift ?? 20;
+  const duration = Array.isArray(group.colorSpeed) ? rand(group.colorSpeed[0], group.colorSpeed[1]) : group.colorSpeed;
+  const start = rand(-shift, shift);
+  const end = -start;
+  el.animate(
+    [
+      { filter: `hue-rotate(${start}deg)` },
+      { filter: `hue-rotate(${end}deg)` }
+    ],
+    {
+      duration,
+      direction: "alternate",
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+}
+function rand(min, max) {
+  return Math.random() * (max - min) + min;
+}
 const featuresEls = document.querySelectorAll(".spollers");
 featuresEls.forEach((featuresEl) => {
   const featureEls = featuresEl.querySelectorAll(".spollers__item");

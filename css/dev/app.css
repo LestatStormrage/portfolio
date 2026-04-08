@@ -134,7 +134,7 @@ input:-webkit-autofill:focus {
   padding-block: 1.875rem;
   padding-inline: 0.9375rem;
   position: relative;
-  background: url("../assets/img/decor/title-bg.webp") 50% 45%/60% 80% no-repeat;
+  background: url("../assets/img/decor/title-bg.avif") 50% 45%/60% 80% no-repeat;
   filter: drop-shadow(0rem 0rem 0.9375rem #000);
 }
 .title-box::before {
@@ -146,7 +146,7 @@ input:-webkit-autofill:focus {
 }
 .title-box::before {
   aspect-ratio: 542/479;
-  background: url("../assets/img/decor/title-decor-top.webp") 0 0/contain no-repeat;
+  background: url("../assets/img/decor/title-decor-top.avif") 0 0/contain no-repeat;
   filter: drop-shadow(0 0 0.125rem #000);
   pointer-events: none;
 }
@@ -166,7 +166,7 @@ input:-webkit-autofill:focus {
 .title::before {
   width: 12.5rem;
   height: 200%;
-  background: url("../assets/img/decor/title-decor.webp") 0 0/contain no-repeat;
+  background: url("../assets/img/decor/title-decor.avif") 0 0/contain no-repeat;
   filter: drop-shadow(0 0 0.125rem #000);
   pointer-events: none;
 }
@@ -177,7 +177,7 @@ input:-webkit-autofill:focus {
   transform: scaleX(-1);
   width: 12.5rem;
   height: 200%;
-  background: url("../assets/img/decor/title-decor.webp") 0 0/contain no-repeat;
+  background: url("../assets/img/decor/title-decor.avif") 0 0/contain no-repeat;
   filter: drop-shadow(0 0 0.125rem #000);
   pointer-events: none;
 }
@@ -244,7 +244,7 @@ input:-webkit-autofill:focus {
 }
 .hero::after {
   content: "";
-  background: url("../assets/img/hero/light/beams.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/light/beams.avif") 50% 50%/cover no-repeat;
   position: fixed;
   top: 0;
   left: 0;
@@ -284,10 +284,10 @@ input:-webkit-autofill:focus {
   transition: opacity 0.5s;
 }
 .hero__image--dark {
-  background: url("../assets/img/hero/dark/bg.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/bg.avif") 50% 50%/cover no-repeat;
 }
 .hero__image--light {
-  background: url("../assets/img/hero/light/bg.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/light/bg.avif") 50% 50%/cover no-repeat;
 }
 .hero__layer {
   position: fixed;
@@ -352,17 +352,17 @@ input:-webkit-autofill:focus {
   z-index: 9;
 }
 .hero__leaves--01 {
-  background: url("../assets/img/hero/dark/leaves-right.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/leaves-right.avif") 50% 50%/cover no-repeat;
   width: 100%;
   height: 100%;
 }
 .hero__leaves--02 {
-  background: url("../assets/img/hero/dark/leaves-left.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/leaves-left.avif") 50% 50%/cover no-repeat;
   width: 100%;
   height: 100%;
 }
 .hero__grass--01 {
-  background: url("../assets/img/hero/dark/fore-grass-02.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/fore-grass-02.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-01 {
   transition: all 0.5s;
@@ -371,10 +371,10 @@ input:-webkit-autofill:focus {
   z-index: 9;
 }
 .hero__tree-01--light {
-  background: url("../assets/img/hero/light/left-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/light/left-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-01--dark {
-  background: url("../assets/img/hero/dark/left-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/left-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-02 {
   left: 0;
@@ -383,10 +383,10 @@ input:-webkit-autofill:focus {
   transition: all 0.5s;
 }
 .hero__tree-02--light {
-  background: url("../assets/img/hero/light/right-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/light/right-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-02--dark {
-  background: url("../assets/img/hero/dark/right-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/right-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-03 {
   left: 0;
@@ -395,10 +395,10 @@ input:-webkit-autofill:focus {
   transition: all 0.5s;
 }
 .hero__tree-03--light {
-  background: url("../assets/img/hero/light/center-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/light/center-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__tree-03--dark {
-  background: url("../assets/img/hero/dark/center-tree.webp") 50% 50%/cover no-repeat;
+  background: url("../assets/img/hero/dark/center-tree.avif") 50% 50%/cover no-repeat;
 }
 .hero__fireflies {
   top: 0;
@@ -513,7 +513,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
 }
 .about__body::before {
   content: "";
-  background: url("../assets/img/textures/wall-horizontal.webp") 0 0/auto 6.25rem repeat-x;
+  background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
   width: 100%;
   height: 6.25rem;
   position: absolute;
@@ -524,7 +524,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
 }
 .about__body::after {
   content: "";
-  background: url("../assets/img/textures/wall-horizontal.webp") 0 0/auto 6.25rem repeat-x;
+  background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
   width: 100%;
   height: 6.25rem;
   position: absolute;
@@ -544,7 +544,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
 .about__background-image {
   width: 100%;
   height: 100%;
-  background: url("../assets/img/textures/wall-1.webp") 0 0/contain repeat;
+  background: url("../assets/img/textures/wall-1.avif") 0 0/contain repeat;
   filter: brightness(0.2);
   transition: filter 0.5s;
 }
@@ -609,7 +609,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
   opacity: 1;
 }
 .about__content {
-  background: url("../assets/img/textures/banner-fabric.webp") 0 0/contain repeat;
+  background: url("../assets/img/textures/banner-fabric.avif") 0 0/contain repeat;
 }
 .about__content {
   border-radius: 0rem 0rem 12.5rem 12.5rem;
@@ -650,7 +650,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../assets/img/textures/stone-fireplace-wall.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/stone-fireplace-wall.avif") 0 0/cover repeat;
   box-shadow: 0 0 5rem rgb(0, 0, 0);
   transform-style: preserve-3d;
 }
@@ -661,7 +661,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
   position: absolute;
   right: 100%;
   top: 0;
-  background: url("../assets/img/textures/stone-fireplace-wall.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/stone-fireplace-wall.avif") 0 0/cover repeat;
   transform-origin: right center;
   transform: rotateY(-60deg);
   filter: brightness(0.8);
@@ -674,7 +674,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
   position: absolute;
   left: 100%;
   top: 0;
-  background: url("../assets/img/textures/stone-fireplace-wall.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/stone-fireplace-wall.avif") 0 0/cover repeat;
   transform-origin: left center;
   transform: rotateY(60deg);
   filter: brightness(0.8);
@@ -715,7 +715,7 @@ html[data-fls-darklite-dark] .hero__tree-03--dark {
   box-shadow: inset -0.125rem 0rem 9.375rem 0.1875rem rgba(145, 93, 4, 0.37);
 }
 .media-about__fireplace {
-  background: url("../assets/img/decor/fireplace.webp") 50% 50%/contain no-repeat;
+  background: url("../assets/img/decor/fireplace.avif") 50% 50%/contain no-repeat;
   width: 70%;
   aspect-ratio: 610/496;
   overflow: hidden;
@@ -797,7 +797,7 @@ html[data-fls-darklite-dark] .about__window-image {
   z-index: 100;
 }
 .projects__container::before {
-  background: url("../assets/img/textures/wall.webp") repeat-y;
+  background: url("../assets/img/textures/wall.avif") repeat-y;
   background-size: 100% auto;
   background-position: left center;
   pointer-events: none;
@@ -811,7 +811,7 @@ html[data-fls-darklite-dark] .about__window-image {
   z-index: 100;
 }
 .projects__container::after {
-  background: url("../assets/img/textures/wall.webp") repeat-y;
+  background: url("../assets/img/textures/wall.avif") repeat-y;
   background-size: 100% auto;
   background-position: right center;
   transform: scale(-1);
@@ -839,7 +839,7 @@ html[data-fls-darklite-dark] .about__window-image {
   width: 100%;
 }
 .projects__background::before {
-  background: url("../assets/img/projects/stalagmite-horizontal.webp") repeat-x;
+  background: url("../assets/img/projects/stalagmite-horizontal.avif") repeat-x;
   background-size: contain;
   background-position: left center;
   pointer-events: none;
@@ -855,7 +855,7 @@ html[data-fls-darklite-dark] .about__window-image {
   width: 100%;
 }
 .projects__background::after {
-  background: url("../assets/img/projects/stalagmite-horizontal.webp") repeat-x;
+  background: url("../assets/img/projects/stalagmite-horizontal.avif") repeat-x;
   background-size: contain;
   background-position: left center;
   pointer-events: none;
@@ -870,7 +870,7 @@ html[data-fls-darklite-dark] .about__window-image {
   transition: filter 0.5s;
   scale: 1.35;
   pointer-events: none;
-  background: url("../assets/img/textures/stone-bg.webp") 50% 50%/contain repeat;
+  background: url("../assets/img/textures/stone-bg.avif") 50% 50%/contain repeat;
 }
 .projects__floor--mobile {
   display: none;
@@ -1006,14 +1006,14 @@ html[data-fls-darklite-dark] .about__window-image {
 }
 .projects-list-compact__slider {
   position: relative;
-  background: url("../assets/img/projects/scroll.webp") 0% 0%/100% 100% no-repeat;
+  background: url("../assets/img/projects/scroll.avif") 0% 0%/100% 100% no-repeat;
 }
 .projects-list-compact__slider {
   padding-bottom: 2.5rem;
 }
 .projects-list-compact__slider::before {
   content: "";
-  background: url("../assets/img/projects/scroll-edge-left.webp") 0% 0%/100% 100% no-repeat;
+  background: url("../assets/img/projects/scroll-edge-left.avif") 0% 0%/100% 100% no-repeat;
   position: absolute;
   top: 0;
   left: -0.3125rem;
@@ -1023,7 +1023,7 @@ html[data-fls-darklite-dark] .about__window-image {
 }
 .projects-list-compact__slider::after {
   content: "";
-  background: url("../assets/img/projects/scroll-edge-right.webp") 0% 0%/100% 100% no-repeat;
+  background: url("../assets/img/projects/scroll-edge-right.avif") 0% 0%/100% 100% no-repeat;
   position: absolute;
   top: 0;
   right: -0.3125rem;
@@ -1126,7 +1126,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .pricing::before {
   content: "";
-  background: url("../assets/img/textures/wall-horizontal.webp") 0 0/auto 6.25rem repeat-x;
+  background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
   width: 100%;
   height: 18.75rem;
   position: absolute;
@@ -1137,7 +1137,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .pricing::after {
   content: "";
-  background: url("../assets/img/textures/wall-horizontal.webp") 0 0/auto 6.25rem repeat-x;
+  background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
   width: 100%;
   height: 18.75rem;
   position: absolute;
@@ -1244,7 +1244,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .description-pricing::before {
   content: "";
-  background: url("../assets/img/textures/rope-horizontal.webp") 0 0/contain repeat-x;
+  background: url("../assets/img/textures/rope-horizontal.avif") 0 0/contain repeat-x;
   width: 100vw;
   height: 0.625rem;
   position: absolute;
@@ -1258,7 +1258,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .description-pricing::after {
   content: "";
-  background: url("../assets/img/textures/rope-horizontal.webp") 0 0/contain repeat-x;
+  background: url("../assets/img/textures/rope-horizontal.avif") 0 0/contain repeat-x;
   width: 100vw;
   height: 0.625rem;
   position: absolute;
@@ -1283,7 +1283,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
   outline: 0.0625rem dashed #fff;
   width: 100%;
   height: 100%;
-  background: url("../assets/img/textures/banner-fabric.webp") 0 0/contain repeat;
+  background: url("../assets/img/textures/banner-fabric.avif") 0 0/contain repeat;
   transition: filter 0.5s;
   border-radius: 6.25rem;
   pointer-events: none;
@@ -1302,7 +1302,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .tier-pricing::before {
   z-index: 3;
-  background: url("../assets/img/textures/wood-01-small.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/wood-01.avif") 0 0/cover repeat;
   box-shadow: inset 0.0625rem -0.1875rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.6705882353);
   border-radius: 0.3125rem;
   pointer-events: none;
@@ -1310,7 +1310,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 }
 .tier-pricing::after {
   content: "";
-  background: url("../assets/img/textures/wood-01-small.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/wood-01.avif") 0 0/cover repeat;
   position: absolute;
   z-index: 1;
   width: 1.875rem;
@@ -1392,7 +1392,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
 .tier-pricing__body {
   font-family: var(--thirdFontFamily);
   position: relative;
-  background: url("../assets/img/textures/banner-fabric.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/banner-fabric.avif") 0 0/cover repeat;
 }
 .tier-pricing__body {
   border-radius: 0rem 0rem 18.75rem 18.75rem;
@@ -1429,7 +1429,7 @@ html[data-fls-darklite-dark] .projects__quill-image {
   outline: 0.0625rem dashed #fff;
   width: 100%;
   height: 100%;
-  background: url("../assets/img/textures/banner-fabric.webp") 0 0/contain repeat;
+  background: url("../assets/img/textures/banner-fabric.avif") 0 0/contain repeat;
   transition: filter 0.5s;
   border-radius: 6.25rem;
   pointer-events: none;
@@ -1616,7 +1616,7 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
 }
 .contact__body {
   margin: 0 auto;
-  background: url("../assets/img/contact/book.webp") 0% 0%/contain no-repeat;
+  background: url("../assets/img/contact/book.avif") 0% 0%/contain no-repeat;
   transition: filter 0.5s;
   aspect-ratio: 1364/940;
 }
@@ -2171,7 +2171,7 @@ html[data-fls-darklite-dark] .contact__body {
   top: 110%;
   left: 30%;
   z-index: 40;
-  background: url("../assets/img/projects/stone-rune.webp") 50% 50%/contain no-repeat;
+  background: url("../assets/img/projects/stone-rune.avif") 50% 50%/contain no-repeat;
   width: 3.75rem;
 }
 .swiper-prev {
@@ -2194,7 +2194,7 @@ html[data-fls-darklite-dark] .contact__body {
   top: 110%;
   right: 30%;
   z-index: 40;
-  background: url("../assets/img/projects/stone-rune.webp") 50% 50%/contain no-repeat;
+  background: url("../assets/img/projects/stone-rune.avif") 50% 50%/contain no-repeat;
   width: 3.75rem;
 }
 .swiper-next {
@@ -2271,7 +2271,7 @@ html[data-fls-darklite-dark] .contact__body {
   transition: all 0.1s;
 }
 .--header-scroll .menu__link, [data-fls-menu-open] .menu__link {
-  background: url("../assets/img/textures/wood-02.webp") 0 0/cover no-repeat;
+  background: url("../assets/img/textures/wood-02.avif") 0 0/cover no-repeat;
   box-shadow: 0rem 0.375rem rgb(27, 0, 0);
   border: 0.0625rem solid rgba(0, 0, 0, 0.3960784314);
 }
@@ -2302,7 +2302,7 @@ html[data-fls-darklite-dark] .contact__body {
   transition: all 0.1s;
 }
 .--header-scroll .icon-menu, [data-fls-menu-open] .icon-menu {
-  background: url("../assets/img/textures/wood-02.webp") 0 0/cover no-repeat;
+  background: url("../assets/img/textures/wood-02.avif") 0 0/cover no-repeat;
   box-shadow: 0rem 0.375rem rgb(27, 0, 0);
   border: 0.0625rem solid rgba(0, 0, 0, 0.3960784314);
 }html {
@@ -2364,7 +2364,7 @@ html[data-fls-darklite-dark] .contact__body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  background: url("../assets/img/textures/wood-01.webp") 50% 50%/cover repeat;
+  background: url("../assets/img/textures/wood-01.avif") 50% 50%/cover repeat;
 }
 .header__decor {
   opacity: 0;
@@ -2494,7 +2494,7 @@ html[data-fls-darklite-dark] .contact__body {
   top: 1.25rem;
   z-index: -1;
   left: 0.625rem;
-  background: url("../assets/img/textures/rope.webp") 0 0/contain repeat-y;
+  background: url("../assets/img/textures/rope.avif") 0 0/contain repeat-y;
   width: 0.625rem;
   height: 0rem;
   transition: height 0.3s;
@@ -2506,7 +2506,7 @@ html[data-fls-darklite-dark] .contact__body {
   z-index: -1;
   top: 1.25rem;
   right: 0.625rem;
-  background: url("../assets/img/textures/rope.webp") 0 0/contain repeat-y;
+  background: url("../assets/img/textures/rope.avif") 0 0/contain repeat-y;
   width: 0.625rem;
   height: 0rem;
   transition: height 0.3s;
@@ -2568,7 +2568,7 @@ html[data-fls-darklite-dark] .contact__body {
   transition: all 0.1s;
 }
 .--header-scroll .dropdown__button, [data-fls-menu-open] .dropdown__button {
-  background: url("../assets/img/textures/wood-02.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/wood-02.avif") 0 0/cover repeat;
   box-shadow: 0rem 0.375rem rgb(27, 0, 0);
   border: 0.0625rem solid rgba(0, 0, 0, 0.3960784314);
 }
@@ -2612,7 +2612,7 @@ html[data-fls-darklite-dark] .contact__body {
   align-items: center;
 }
 .--header-scroll .dropdown__content li, [data-fls-menu-open] .dropdown__content li {
-  background: url("../assets/img/textures/wood-02.webp") 0 0/cover repeat;
+  background: url("../assets/img/textures/wood-02.avif") 0 0/cover repeat;
 }
 .dropdown__content li {
   cursor: pointer;
@@ -2882,11 +2882,11 @@ textarea.input {
 
 /* Generated by vite-plugin-svg-spritemap */
 html[data-fls-darklite-light] {
-  --bg-forest: url("../assets/img/hero/light/bg.webp");
+  --bg-forest: url("../assets/img/hero/light/bg.avif");
 }
 
 html[data-fls-darklite-dark] {
-  --bg-forest: url("../assets/img/hero/dark/bg.webp");
+  --bg-forest: url("../assets/img/hero/dark/bg.avif");
 }html {
   --mainColor: #02010a;
   --mainColor-subtle: rgba(2, 1, 10, 0.6);
@@ -3046,7 +3046,7 @@ html[data-fls-darklite-dark] {
     flex-direction: column;
     height: 100dvh;
     overflow-y: auto;
-    background: url("../assets/img/textures/wood-01-vertical.webp") 0 0/cover no-repeat;
+    background: url("../assets/img/textures/wood-01-vertical.avif") 0 0/cover no-repeat;
   }
   .menu__list {
     flex-direction: column;
@@ -3090,9 +3090,6 @@ html[data-fls-darklite-dark] {
   [data-fls-menu-open] .icon-menu::after {
     bottom: calc(50% - 0.0625rem);
     transform: translate(50%, 0) rotate(45deg);
-  }
-  .header__background-image {
-    background: url("../assets/img/textures/wood-01-small.webp") 50% 50%/cover repeat;
   }
   .header__decor-image--big {
     display: none;
@@ -3140,10 +3137,10 @@ html[data-fls-darklite-dark] {
     display: block;
   }
   .hero__image--dark {
-    background: url("../assets/img/hero/dark/bg-mobile.webp") 50% 50%/cover no-repeat;
+    background: url("../assets/img/hero/dark/bg-mobile.avif") 50% 50%/cover no-repeat;
   }
   .hero__image--light {
-    background: url("../assets/img/hero/light/bg-mobile.webp") 50% 50%/cover no-repeat;
+    background: url("../assets/img/hero/light/bg-mobile.avif") 50% 50%/cover no-repeat;
   }
   .hero__layer--5 {
     top: 30lvh;
@@ -3914,7 +3911,7 @@ html[data-fls-darklite-dark] {
     filter: drop-shadow(0.125rem 0.125rem 0.125rem rgb(14, 14, 14));
   }
   .project__body {
-    background: url("../assets/img/projects/parchment.webp") 0% 0%/100% 100% no-repeat;
+    background: url("../assets/img/projects/parchment.avif") 0% 0%/100% 100% no-repeat;
     padding: 1.25rem;
   }
   .spollers__item {

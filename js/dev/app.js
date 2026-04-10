@@ -151,6 +151,23 @@ function colorShift(el, group) {
 function rand(min, max) {
   return Math.random() * (max - min) + min;
 }
+document.querySelectorAll(".project").forEach((project) => {
+  const video = project.querySelector(".project__preview");
+  project.addEventListener("pointerenter", () => {
+    project.classList.add("active");
+    if (video) {
+      video.play().catch(() => {
+      });
+    }
+  });
+  project.addEventListener("pointerleave", () => {
+    project.classList.remove("active");
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
 const featuresEls = document.querySelectorAll(".spollers");
 featuresEls.forEach((featuresEl) => {
   const featureEls = featuresEl.querySelectorAll(".spollers__item");

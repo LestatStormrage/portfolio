@@ -2364,7 +2364,7 @@ html[data-fls-darklite-dark] .contact__body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  background: url("../assets/img/textures/wood-01.avif") 50% 50%/cover repeat;
+  background: url("../assets/img/textures/wood-header.avif") 50% 50%/cover repeat;
 }
 .header__decor {
   opacity: 0;

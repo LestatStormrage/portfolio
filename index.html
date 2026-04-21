@@ -8,8 +8,8 @@
 		<link rel="preload" href="./assets/fonts/Cinzel.woff2" as="font" type="font/woff2" defer>
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script defer src="./js/app.min.js?v=1776299592820"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1776299592820">
+		<script defer src="./js/app.min.js?v=1776730685541"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1776730685541">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,7 +25,8 @@
 					<div class="header__body">
 						<div class="header__logo">
 							<!-- <img class="header__logo-image" src="@img/logo/logo-wide-white.png" alt="logo"> -->
-							<img class="header__logo-image" alt="logo" src="./assets/img/logo/logo-wide-white.avif">
+							<img class="header__logo-image header__logo-image--desktop" alt="logo" src="./assets/img/logo/logo-wide-white.avif">
+							<img class="header__logo-image header__logo-image--mobile" alt="logo" src="./assets/img/logo/logo-white.avif">
 						</div>
 						<!-- <include src="@components/layout/menu/menu.html" locals='{"active":"Home"}'></include> -->
 						<div class="header__menu menu">
@@ -36,7 +37,7 @@
 								<div class="menu__block">
 									<ul class="menu__list">
 										<li class="menu__item">
-											<a href="#" class="menu__link" data-fls-scrollto=".about" data-fls-scrollto-top="100">
+											<a href="#" class="menu__link" data-fls-scrollto=".about" data-fls-scrollto-top="-100">
 												<span class="menu__link-decor">a</span>
 												<span data-i18n="menu.link.about">About</span>
 												<span class="menu__link-decor">w</span>
@@ -134,7 +135,7 @@
 							</h1>
 						</div>
 					</section>
-					<section data-fls-parallax-parent="" class="page__hero hero hero--mobile">
+					<section data-fls-parallax-parent="" id="about" class="page__hero hero hero--mobile">
 						<div class="hero__background hero__layer">
 							<div class="hero__image hero__image--dark"></div>
 							<div class="hero__image hero__image--light"></div>
@@ -172,7 +173,7 @@ class="hero__layer hero__layer--1">
 						</div>
 						<div class="hero__title-box hero__layer hero__layer--8">
 							<h1 data-fls-parallax="" data-fls-parallax-coefficient="10" class="hero__title">
-								<span class="hero__title-primary">222222</span>
+								<span class="hero__title-primary">Stormrage</span>
 								<span class="hero__title-secondary">web</span>
 							</h1>
 						</div>
@@ -213,7 +214,8 @@ class="hero__layer hero__layer--1">
                             fast and secure websites with very custom design.
 										</p>
 										<p>
-											I also understand that a large upfront investment in a good website isn’t always ideal or affordable,
+											I also understand that a large upfront investment in a good website isn’t always ideal or
+                            affordable,
                             especially for small businesses. This is why, to make things more
                             flexible, I also offer a subscription-based option. With this model,
                             you pay a fixed monthly fee instead of a large upfront price. This makes it easier to plan
@@ -503,7 +505,10 @@ class="hero__layer hero__layer--1">
 													<!-- <div class="tier-pricing__list-title">Includes:</div> -->
 													<ul class="tier-pricing__list">
 														<li class="tier-pricing__list-item">4-6 pages</li>
-														<li class="tier-pricing__list-item">Multilingual support, dark-light mode, contact form are included in the price</li>
+														<li class="tier-pricing__list-item">
+															Multilingual support, dark-light mode, contact form are included in the
+                                            price
+														</li>
 														<li class="tier-pricing__list-item">345</li>
 														<li class="tier-pricing__list-item">456</li>
 													</ul>
@@ -527,7 +532,8 @@ class="hero__layer hero__layer--1">
 													<ul class="tier-pricing__list">
 														<li class="tier-pricing__list-item">Lifetime Updates</li>
 														<li class="tier-pricing__list-item">
-															Everything from the additional modules list is included in the price (other than additional pages fee after 6).
+															Everything from the additional modules list is included in the price (other
+                                            than additional pages fee after 6).
 														</li>
 														<li class="tier-pricing__list-item"></li>
 														<li class="tier-pricing__list-item">456</li>
@@ -846,7 +852,7 @@ class="hero__layer hero__layer--1">
 									<div class="contact__form form-contact">
 										<h2 class="contact__title">Let's talk!</h2>
 										<!-- <h2 data-fls-dynamic=".contact__container, 768, 0" class="contact__title">Let's talk!</h2> -->
-										<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="php/sendmail/index.php" class="form-contact__body">
+										<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail/index.php" class="form-contact__body">
 											<div class="form-contact__column">
 												<div class="form-contact__line">
 													<label class="form-contact__label" for="name">Name</label>
@@ -856,13 +862,32 @@ class="hero__layer hero__layer--1">
 													<label class="form-contact__label" for="email">Email</label>
 													<input id="email" data-fls-input="" data-fls-form-errtext="Email error" required type="email" name="email" placeholder="Email" class="input form-contact__input">
 												</div>
+												<div data-fls-dynamic=".form-contact__column--last, 767.98, 1" class="form-contact__line">
+													<div class="form-contact__checkbox checkbox-contact-form">
+														<input data-fls-input="" id="contactUsAgreement" data-error="Error" class="checkbox-contact-form__input input _req" type="checkbox" value="1" name="agreement">
+														<label for="contactUsAgreement" class="checkbox-contact-form__label">
+															<div class="checkbox-contact-form__text">
+																<span data-i18n="contact-us.form.agreement.text">
+																	I consent to the
+                                                    collection, processing or use of my personal data in accordance with
+                                                    the privacy policy.
+																</span>
+																<!--
+<span><a href="privacy-policy"
+data-i18n="contact-us.form.agreement.link">privacy policy</a>.
+</span>
+-->
+															</div>
+														</label>
+													</div>
+												</div>
 											</div>
-											<div class="form-contact__column">
+											<div class="form-contact__column form-contact__column--last">
 												<div class="form-contact__line form-contact__line--textarea">
 													<label class="form-contact__label" for="message">Message</label>
 													<textarea id="message" data-fls-input="" autocomplete="off" name="message" placeholder="Message" class="input form-contact__input"></textarea>
 												</div>
-												<button data-fls-button="" type="submit" class="form-contact__button button">
+												<button data-fls-dynamic=".contact__form, 767.98, 2" data-fls-button="" type="submit" class="form-contact__button button">
 													<span class="button__decor button__decor--left">w</span>
 													<span class="button__text">send</span>
 													<span class="button__decor button__decor--right">a</span>
@@ -884,6 +909,13 @@ class="hero__layer hero__layer--1">
 				<div class="footer__container">
 					<div class="footer__info info-footer">
 						<div class="info-footer__item">Contact Email: qwe@qwe.com</div>
+						<div class="info-footer__item">
+							<a href="privacy-policy">Privacy Policy</a>
+						</div>
+						<div class="info-footer__item">
+							<a href="legal-disclosure">Legal disclosure</a>
+						</div>
+						<div class="info-footer__item">© 2026 Stormrage Web. All rights reserved.</div>
 					</div>
 					<figure class="footer__logo">
 						<img alt="logo" src="./assets/img/logo/logo-white.avif">

@@ -27,158 +27,6 @@
     fetch(link.href, fetchOpts);
   }
 })();
-const fireflyGroups = [
-  {
-    selector: ".firefly--1",
-    amount: 3,
-    // [value range]
-    size: [4, 8],
-    speed: [2e3, 4e3],
-    hueShift: 25,
-    colorSpeed: [3e3, 7e3],
-    glow: [1800, 3500]
-  },
-  {
-    selector: ".firefly--2",
-    amount: 4,
-    size: [6, 12],
-    speed: [7500, 9500],
-    hueShift: 40,
-    colorSpeed: 6e3,
-    glow: [2500, 4500]
-  },
-  {
-    selector: ".firefly--3",
-    amount: 5,
-    size: [3, 5],
-    speed: [6e3, 12e3],
-    hueShift: 40,
-    colorSpeed: 6e3,
-    glow: [2e3, 4e3]
-  },
-  {
-    selector: ".firefly--4",
-    amount: 5,
-    size: [5, 15],
-    speed: [6e3, 12e3],
-    hueShift: 40,
-    colorSpeed: 6e3,
-    glow: [2e3, 4e3]
-  },
-  {
-    selector: ".firefly--5",
-    amount: 10,
-    size: [4, 8],
-    speed: [6e3, 12e3],
-    hueShift: 40,
-    colorSpeed: 6e3,
-    glow: [2e3, 4e3]
-  },
-  {
-    selector: ".firefly--6",
-    amount: 4,
-    size: [4, 8],
-    speed: [25e3, 35e3],
-    hueShift: 40,
-    colorSpeed: 6e3,
-    glow: [2e3, 4e3]
-  }
-];
-fireflyGroups.forEach((group) => {
-  const containers = document.querySelectorAll(group.selector);
-  if (!containers.length) return;
-  containers.forEach((container) => {
-    const rect = container.getBoundingClientRect();
-    for (let i = 0; i < group.amount; i++) {
-      const el = document.createElement("div");
-      el.classList.add("firefly");
-      const size = rand(group.size[0], group.size[1]);
-      el.style.width = `${size}px`;
-      el.style.height = `${size}px`;
-      el.style.left = `${Math.random() * rect.width}px`;
-      el.style.top = `${Math.random() * rect.height}px`;
-      const glowDuration = rand(group.glow[0], group.glow[1]);
-      el.style.animationDuration = `${glowDuration}ms`;
-      el.style.animationDelay = `${-Math.random() * glowDuration}ms`;
-      container.appendChild(el);
-      colorShift(el, group);
-      moveFirefly(el, group);
-    }
-  });
-});
-function moveFirefly(el, group) {
-  const rect = el.parentElement.getBoundingClientRect();
-  const x = Math.random() * rect.width;
-  const y = Math.random() * rect.height;
-  const duration = rand(group.speed[0], group.speed[1]);
-  const animation = el.animate(
-    [
-      { left: el.style.left, top: el.style.top },
-      { left: `${x}px`, top: `${y}px` }
-    ],
-    {
-      duration,
-      easing: "ease-in-out",
-      fill: "forwards"
-    }
-  );
-  if (animation) {
-    animation.onfinish = () => {
-      el.style.left = `${x}px`;
-      el.style.top = `${y}px`;
-      moveFirefly(el, group);
-    };
-  }
-}
-function colorShift(el, group) {
-  const shift = group.hueShift ?? 20;
-  const duration = Array.isArray(group.colorSpeed) ? rand(group.colorSpeed[0], group.colorSpeed[1]) : group.colorSpeed;
-  const start = rand(-shift, shift);
-  const end = -start;
-  el.animate(
-    [
-      { filter: `hue-rotate(${start}deg)` },
-      { filter: `hue-rotate(${end}deg)` }
-    ],
-    {
-      duration,
-      direction: "alternate",
-      iterations: Infinity,
-      easing: "ease-in-out"
-    }
-  );
-}
-function rand(min, max) {
-  return Math.random() * (max - min) + min;
-}
-document.querySelectorAll(".project").forEach((project) => {
-  const video = project.querySelector(".project__preview");
-  project.addEventListener("pointerenter", () => {
-    project.classList.add("active");
-    if (video) {
-      video.play().catch(() => {
-      });
-    }
-  });
-  project.addEventListener("pointerleave", () => {
-    project.classList.remove("active");
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-    }
-  });
-});
-const featuresEls = document.querySelectorAll(".spollers");
-featuresEls.forEach((featuresEl) => {
-  const featureEls = featuresEl.querySelectorAll(".spollers__item");
-  featuresEl.addEventListener("pointermove", (ev) => {
-    featureEls.forEach((featureEl) => {
-      const rect = featureEl.getBoundingClientRect();
-      featureEl.style.setProperty("--x", ev.clientX - rect.left);
-      featureEl.style.setProperty("--y", ev.clientY - rect.top);
-    });
-  });
-});
 function getHash() {
   if (location.hash) {
     return location.hash.replace("#", "");
@@ -351,6 +199,438 @@ const gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) =>
     });
   }
 };
+function menuInit() {
+  console.log("Menu JS loaded");
+  document.addEventListener("click", function(e) {
+    const burger = e.target.closest("[data-fls-menu]");
+    console.log("Click event detected", burger);
+    if (bodyLockStatus && burger) {
+      const menuOpen = document.documentElement.hasAttribute("data-fls-menu-open");
+      if (!menuOpen) {
+        history.pushState({ flsMenuOpen: true }, "");
+      }
+      bodyLockToggle();
+      document.documentElement.toggleAttribute("data-fls-menu-open");
+    }
+  });
+  window.addEventListener("popstate", function(e) {
+    if (document.documentElement.hasAttribute("data-fls-menu-open")) {
+      history.pushState(null, "");
+      document.documentElement.removeAttribute("data-fls-menu-open");
+      bodyLockToggle();
+    }
+  });
+}
+window.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector("[data-fls-menu]")) {
+    menuInit();
+  }
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const html = document.documentElement;
+  const button = document.querySelector(".header__theme-switcher");
+  const moon = document.querySelector(".moon");
+  function updateToggle() {
+    if (html.hasAttribute("data-fls-darklite-light")) {
+      moon.classList.add("sun");
+      button.classList.add("day");
+    } else {
+      moon.classList.remove("sun");
+      button.classList.remove("day");
+    }
+  }
+  updateToggle();
+  const observer = new MutationObserver(updateToggle);
+  observer.observe(html, { attributes: true });
+});
+function headerScroll() {
+  const header = document.querySelector("[data-fls-header-scroll]");
+  const headerShow = header.hasAttribute("data-fls-header-scroll-show");
+  const headerShowTimer = header.dataset.flsHeaderScrollShow ? header.dataset.flsHeaderScrollShow : 500;
+  const startPoint = header.dataset.flsHeaderScroll ? header.dataset.flsHeaderScroll : 1;
+  let scrollDirection = 0;
+  let timer;
+  document.addEventListener("scroll", function(e) {
+    const scrollTop = window.scrollY;
+    clearTimeout(timer);
+    if (scrollTop >= startPoint) {
+      !header.classList.contains("--header-scroll") ? header.classList.add("--header-scroll") : null;
+      if (headerShow) {
+        if (scrollTop > scrollDirection) {
+          header.classList.contains("--header-show") ? header.classList.remove("--header-show") : null;
+        } else {
+          !header.classList.contains("--header-show") ? header.classList.add("--header-show") : null;
+        }
+        timer = setTimeout(() => {
+          !header.classList.contains("--header-show") ? header.classList.add("--header-show") : null;
+        }, headerShowTimer);
+      }
+    } else {
+      header.classList.contains("--header-scroll") ? header.classList.remove("--header-scroll") : null;
+      if (headerShow) {
+        header.classList.contains("--header-show") ? header.classList.remove("--header-show") : null;
+      }
+    }
+    scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+  });
+}
+document.querySelector("[data-fls-header-scroll]") ? window.addEventListener("load", headerScroll) : null;
+class DynamicAdapt {
+  constructor() {
+    this.type = "max";
+    this.init();
+  }
+  init() {
+    this.objects = [];
+    this.daClassname = "--dynamic";
+    this.nodes = [...document.querySelectorAll("[data-fls-dynamic]")];
+    this.nodes.forEach((node) => {
+      const data = node.dataset.flsDynamic.trim();
+      const dataArray = data.split(`,`);
+      const object = {};
+      object.element = node;
+      object.parent = node.parentNode;
+      object.destinationParent = dataArray[3] ? node.closest(dataArray[3].trim()) || document : document;
+      dataArray[3] ? dataArray[3].trim() : null;
+      const objectSelector = dataArray[0] ? dataArray[0].trim() : null;
+      if (objectSelector) {
+        const foundDestination = object.destinationParent.querySelector(objectSelector);
+        if (foundDestination) {
+          object.destination = foundDestination;
+        }
+      }
+      object.breakpoint = dataArray[1] ? dataArray[1].trim() : `767.98`;
+      object.place = dataArray[2] ? dataArray[2].trim() : `last`;
+      object.index = this.indexInParent(object.parent, object.element);
+      this.objects.push(object);
+    });
+    this.arraySort(this.objects);
+    this.mediaQueries = this.objects.map(({ breakpoint }) => `(${this.type}-width: ${breakpoint / 16}em),${breakpoint}`).filter((item, index, self) => self.indexOf(item) === index);
+    this.mediaQueries.forEach((media) => {
+      const mediaSplit = media.split(",");
+      const matchMedia = window.matchMedia(mediaSplit[0]);
+      const mediaBreakpoint = mediaSplit[1];
+      const objectsFilter = this.objects.filter(({ breakpoint }) => breakpoint === mediaBreakpoint);
+      matchMedia.addEventListener("change", () => {
+        this.mediaHandler(matchMedia, objectsFilter);
+      });
+      this.mediaHandler(matchMedia, objectsFilter);
+    });
+  }
+  mediaHandler(matchMedia, objects) {
+    if (matchMedia.matches) {
+      objects.forEach((object) => {
+        if (object.destination) {
+          this.moveTo(object.place, object.element, object.destination);
+        }
+      });
+    } else {
+      objects.forEach(({ parent, element, index }) => {
+        if (element.classList.contains(this.daClassname)) {
+          this.moveBack(parent, element, index);
+        }
+      });
+    }
+  }
+  moveTo(place, element, destination) {
+    element.classList.add(this.daClassname);
+    const index = place === "last" || place === "first" ? place : parseInt(place, 10);
+    if (index === "last" || index >= destination.children.length) {
+      destination.append(element);
+    } else if (index === "first") {
+      destination.prepend(element);
+    } else {
+      destination.children[index].before(element);
+    }
+  }
+  moveBack(parent, element, index) {
+    element.classList.remove(this.daClassname);
+    if (parent.children[index] !== void 0) {
+      parent.children[index].before(element);
+    } else {
+      parent.append(element);
+    }
+  }
+  indexInParent(parent, element) {
+    return [...parent.children].indexOf(element);
+  }
+  arraySort(arr) {
+    if (this.type === "min") {
+      arr.sort((a, b) => {
+        if (a.breakpoint === b.breakpoint) {
+          if (a.place === b.place) {
+            return 0;
+          }
+          if (a.place === "first" || b.place === "last") {
+            return -1;
+          }
+          if (a.place === "last" || b.place === "first") {
+            return 1;
+          }
+          return 0;
+        }
+        return a.breakpoint - b.breakpoint;
+      });
+    } else {
+      arr.sort((a, b) => {
+        if (a.breakpoint === b.breakpoint) {
+          if (a.place === b.place) {
+            return 0;
+          }
+          if (a.place === "first" || b.place === "last") {
+            return 1;
+          }
+          if (a.place === "last" || b.place === "first") {
+            return -1;
+          }
+          return 0;
+        }
+        return b.breakpoint - a.breakpoint;
+      });
+      return;
+    }
+  }
+}
+if (document.querySelector("[data-fls-dynamic]")) {
+  window.addEventListener("load", () => window.flsDynamic = new DynamicAdapt());
+}
+function pageNavigation() {
+  document.addEventListener("click", pageNavigationAction);
+  document.addEventListener("watcherCallback", pageNavigationAction);
+  function pageNavigationAction(e) {
+    if (e.type === "click") {
+      const targetElement = e.target;
+      if (targetElement.closest("[data-fls-scrollto]")) {
+        const gotoLink = targetElement.closest("[data-fls-scrollto]");
+        const gotoLinkSelector = gotoLink.dataset.flsScrollto ? gotoLink.dataset.flsScrollto : "";
+        const noHeader = gotoLink.hasAttribute("data-fls-scrollto-header") ? true : false;
+        const gotoSpeed = gotoLink.dataset.flsScrolltoSpeed ? gotoLink.dataset.flsScrolltoSpeed : 500;
+        const offsetTop = gotoLink.dataset.flsScrolltoTop ? parseInt(gotoLink.dataset.flsScrolltoTop) : 0;
+        if (window.fullpage) {
+          const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest("[data-fls-fullpage-section]");
+          const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.flsFullpageId : null;
+          if (fullpageSectionId !== null) {
+            window.fullpage.switchingSection(fullpageSectionId);
+            if (document.documentElement.hasAttribute("data-fls-menu-open")) {
+              bodyUnlock();
+              document.documentElement.removeAttribute("data-fls-menu-open");
+            }
+          }
+        } else {
+          gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+        }
+        e.preventDefault();
+      }
+    } else if (e.type === "watcherCallback" && e.detail) {
+      const entry = e.detail.entry;
+      const targetElement = entry.target;
+      if (targetElement.dataset.flsWatcher === "navigator") {
+        document.querySelector(`[data-fls-scrollto].--navigator-active`);
+        let navigatorCurrentItem;
+        if (targetElement.id && document.querySelector(`[data-fls-scrollto="#${targetElement.id}"]`)) {
+          navigatorCurrentItem = document.querySelector(`[data-fls-scrollto="#${targetElement.id}"]`);
+        } else if (targetElement.classList.length) {
+          for (let index = 0; index < targetElement.classList.length; index++) {
+            const element = targetElement.classList[index];
+            if (document.querySelector(`[data-fls-scrollto=".${element}"]`)) {
+              navigatorCurrentItem = document.querySelector(`[data-fls-scrollto=".${element}"]`);
+              break;
+            }
+          }
+        }
+        if (entry.isIntersecting) {
+          navigatorCurrentItem ? navigatorCurrentItem.classList.add("--navigator-active") : null;
+        } else {
+          navigatorCurrentItem ? navigatorCurrentItem.classList.remove("--navigator-active") : null;
+        }
+      }
+    }
+  }
+  if (getHash()) {
+    let goToHash;
+    if (document.querySelector(`#${getHash()}`)) {
+      goToHash = `#${getHash()}`;
+    } else if (document.querySelector(`.${getHash()}`)) {
+      goToHash = `.${getHash()}`;
+    }
+    goToHash ? gotoBlock(goToHash) : null;
+  }
+}
+document.querySelector("[data-fls-scrollto]") ? window.addEventListener("load", pageNavigation) : null;
+function getHours() {
+  const now2 = /* @__PURE__ */ new Date();
+  const hours = now2.getHours();
+  return hours;
+}
+function darkliteInit() {
+  const htmlBlock = document.documentElement;
+  const saveUserTheme = localStorage.getItem("fls-user-theme");
+  let userTheme;
+  if (document.querySelector("[data-fls-darklite-time]")) {
+    let customRange = document.querySelector("[data-fls-darklite-time]").dataset.flsDarkliteTime;
+    customRange = customRange || "18,5";
+    const timeFrom = +customRange.split(",")[0];
+    const timeTo = +customRange.split(",")[1];
+    console.log(timeFrom);
+    userTheme = getHours() >= timeFrom && getHours() <= timeTo ? "dark" : "light";
+  } else {
+    userTheme = "dark";
+  }
+  const themeButton = document.querySelector("[data-fls-darklite-set]");
+  const resetButton = document.querySelector("[data-fls-darklite-reset]");
+  if (themeButton) {
+    themeButton.addEventListener("click", function(e) {
+      changeTheme(true);
+    });
+  }
+  if (resetButton) {
+    resetButton.addEventListener("click", function(e) {
+      localStorage.setItem("fls-user-theme", "");
+    });
+  }
+  function setThemeClass() {
+    htmlBlock.setAttribute(`data-fls-darklite-${saveUserTheme ? saveUserTheme : userTheme}`, "");
+  }
+  setThemeClass();
+  function changeTheme(saveTheme = false) {
+    let currentTheme = htmlBlock.hasAttribute("data-fls-darklite-light") ? "light" : "dark";
+    let newTheme;
+    if (currentTheme === "light") {
+      newTheme = "dark";
+    } else if (currentTheme === "dark") {
+      newTheme = "light";
+    }
+    htmlBlock.removeAttribute(`data-fls-darklite-${currentTheme}`);
+    htmlBlock.setAttribute(`data-fls-darklite-${newTheme}`, "");
+    saveTheme ? localStorage.setItem("fls-user-theme", newTheme) : null;
+  }
+}
+document.querySelector("[data-fls-darklite]") ? window.addEventListener("load", darkliteInit) : null;
+window.addEventListener("load", () => {
+  document.body.classList.add("transition-ready");
+});
+const locales = [
+  "en-GB",
+  "de-DE",
+  "uk-UA"
+];
+const dropdownBtn = document.getElementById("dropdown-btn");
+const dropdownContent = document.getElementById("dropdown-content");
+function getFlagSrc(countryCode) {
+  if (!countryCode) return "";
+  return `https://flagsapi.com/${countryCode.toUpperCase()}/shiny/64.png`;
+}
+function getNestedTranslation(obj, path) {
+  return path.split(".").reduce((acc, key) => acc && acc[key] !== void 0 ? acc[key] : null, obj);
+}
+async function loadLanguage(locale) {
+  const pageName = window.location.pathname.split("/").pop().replace(".html", "") || "index";
+  const langCode = locale.split("-")[0];
+  try {
+    const [commonRes, pageRes] = await Promise.all([
+      fetch(`files/lang/${langCode}/common.json`),
+      fetch(`files/lang/${langCode}/${pageName}.json`)
+    ]);
+    const [commonTranslations, pageTranslations] = await Promise.all([
+      commonRes.json(),
+      pageRes.json()
+    ]);
+    const translations = { ...commonTranslations, ...pageTranslations };
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = getNestedTranslation(translations, key);
+      if (value !== null && value !== void 0) el.innerHTML = value;
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const value = getNestedTranslation(translations, key);
+      if (value !== null && value !== void 0) el.placeholder = value;
+    });
+    document.querySelectorAll("select[data-fls-select]").forEach((select) => {
+      select.querySelectorAll("option[data-i18n]").forEach((option) => {
+        const key = option.dataset.i18n;
+        const value = getNestedTranslation(translations, key);
+        if (value !== null && value !== void 0) option.textContent = value;
+      });
+      const selectItem = select.parentElement.querySelector(".select__body");
+      if (selectItem) {
+        const buttons = selectItem.querySelectorAll(".select__option");
+        buttons.forEach((btn) => {
+          const val = btn.dataset.flsSelectValue;
+          const correspondingOption = select.querySelector(`option[value="${val}"]`);
+          if (correspondingOption) {
+            btn.innerHTML = correspondingOption.textContent;
+          }
+        });
+        const selectedOption = select.options[select.selectedIndex];
+        const titleContent = selectItem.querySelector(".select__title .select__content");
+        if (titleContent && selectedOption) {
+          titleContent.textContent = selectedOption.textContent;
+        }
+      }
+    });
+    const metaTitle = getNestedTranslation(translations, "_metaTitle");
+    const metaDescription = getNestedTranslation(translations, "_metaDescription");
+    if (metaTitle) document.title = metaTitle;
+    if (metaDescription) {
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = "description";
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", metaDescription);
+    }
+    document.documentElement.lang = langCode;
+    return locale;
+  } catch (err) {
+    console.error("Translation load error:", err);
+    return locale;
+  }
+}
+function setSelectedLocale(locale) {
+  const intlLocale = new Intl.Locale(locale);
+  const region = intlLocale.region || locale.split("-")[1] || "GB";
+  const langName = new Intl.DisplayNames([locale], { type: "language" }).of(intlLocale.language);
+  dropdownBtn.innerHTML = `<img src="${getFlagSrc(region)}" alt="${langName} flag"><span class="lang-name">${langName}</span><span class="arrow-down"></span>`;
+  dropdownContent.innerHTML = "";
+  locales.filter((l) => l !== locale).forEach((other) => {
+    const otherIntl = new Intl.Locale(other);
+    const otherRegion = otherIntl.region || other.split("-")[1] || "GB";
+    const otherName = new Intl.DisplayNames([other], { type: "language" }).of(otherIntl.language);
+    const li = document.createElement("li");
+    li.innerHTML = `<img src="${getFlagSrc(otherRegion)}" alt="${otherName} flag"><span class="locale-name">${otherName}</span>`;
+    li.addEventListener("click", () => {
+      setLanguage(other);
+      dropdown.classList.remove("open");
+    });
+    dropdownContent.appendChild(li);
+  });
+}
+async function setLanguage(locale) {
+  localStorage.setItem("selectedLang", locale);
+  await loadLanguage(locale);
+  setSelectedLocale(locale);
+}
+document.addEventListener("DOMContentLoaded", async () => {
+  let saved = localStorage.getItem("selectedLang");
+  if (!saved) {
+    const browserLang = new Intl.Locale(navigator.language).language;
+    const matched = locales.find((l) => new Intl.Locale(l).language === browserLang);
+    saved = matched || "en-GB";
+    localStorage.setItem("selectedLang", saved);
+  }
+  await loadLanguage(saved);
+  setSelectedLocale(saved);
+});
+const dropdown = document.querySelector(".header__language-dropdown");
+dropdownBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdown.classList.toggle("open");
+});
+document.addEventListener("click", () => {
+  dropdown.classList.remove("open");
+});
 function tabs() {
   const tabs2 = document.querySelectorAll("[data-fls-tabs]");
   let tabsActiveHash = [];
@@ -467,6 +747,158 @@ function tabs() {
   }
 }
 window.addEventListener("load", tabs);
+const fireflyGroups = [
+  {
+    selector: ".firefly--1",
+    amount: 3,
+    // [value range]
+    size: [4, 8],
+    speed: [2e3, 4e3],
+    hueShift: 25,
+    colorSpeed: [3e3, 7e3],
+    glow: [1800, 3500]
+  },
+  {
+    selector: ".firefly--2",
+    amount: 4,
+    size: [6, 12],
+    speed: [7500, 9500],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2500, 4500]
+  },
+  {
+    selector: ".firefly--3",
+    amount: 5,
+    size: [3, 5],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--4",
+    amount: 5,
+    size: [5, 15],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--5",
+    amount: 10,
+    size: [4, 8],
+    speed: [6e3, 12e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  },
+  {
+    selector: ".firefly--6",
+    amount: 4,
+    size: [4, 8],
+    speed: [25e3, 35e3],
+    hueShift: 40,
+    colorSpeed: 6e3,
+    glow: [2e3, 4e3]
+  }
+];
+fireflyGroups.forEach((group) => {
+  const containers = document.querySelectorAll(group.selector);
+  if (!containers.length) return;
+  containers.forEach((container) => {
+    const rect = container.getBoundingClientRect();
+    for (let i = 0; i < group.amount; i++) {
+      const el = document.createElement("div");
+      el.classList.add("firefly");
+      const size = rand(group.size[0], group.size[1]);
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+      el.style.left = `${Math.random() * rect.width}px`;
+      el.style.top = `${Math.random() * rect.height}px`;
+      const glowDuration = rand(group.glow[0], group.glow[1]);
+      el.style.animationDuration = `${glowDuration}ms`;
+      el.style.animationDelay = `${-Math.random() * glowDuration}ms`;
+      container.appendChild(el);
+      colorShift(el, group);
+      moveFirefly(el, group);
+    }
+  });
+});
+function moveFirefly(el, group) {
+  const rect = el.parentElement.getBoundingClientRect();
+  const x = Math.random() * rect.width;
+  const y = Math.random() * rect.height;
+  const duration = rand(group.speed[0], group.speed[1]);
+  const animation = el.animate(
+    [
+      { left: el.style.left, top: el.style.top },
+      { left: `${x}px`, top: `${y}px` }
+    ],
+    {
+      duration,
+      easing: "ease-in-out",
+      fill: "forwards"
+    }
+  );
+  if (animation) {
+    animation.onfinish = () => {
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+      moveFirefly(el, group);
+    };
+  }
+}
+function colorShift(el, group) {
+  const shift = group.hueShift ?? 20;
+  const duration = Array.isArray(group.colorSpeed) ? rand(group.colorSpeed[0], group.colorSpeed[1]) : group.colorSpeed;
+  const start = rand(-shift, shift);
+  const end = -start;
+  el.animate(
+    [
+      { filter: `hue-rotate(${start}deg)` },
+      { filter: `hue-rotate(${end}deg)` }
+    ],
+    {
+      duration,
+      direction: "alternate",
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+}
+function rand(min, max) {
+  return Math.random() * (max - min) + min;
+}
+document.querySelectorAll(".project").forEach((project) => {
+  const video = project.querySelector(".project__preview");
+  project.addEventListener("pointerenter", () => {
+    project.classList.add("active");
+    if (video) {
+      video.play().catch(() => {
+      });
+    }
+  });
+  project.addEventListener("pointerleave", () => {
+    project.classList.remove("active");
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+const featuresEls = document.querySelectorAll(".spollers");
+featuresEls.forEach((featuresEl) => {
+  const featureEls = featuresEl.querySelectorAll(".spollers__item");
+  featuresEl.addEventListener("pointermove", (ev) => {
+    featureEls.forEach((featureEl) => {
+      const rect = featureEl.getBoundingClientRect();
+      featureEl.style.setProperty("--x", ev.clientX - rect.left);
+      featureEl.style.setProperty("--y", ev.clientY - rect.top);
+    });
+  });
+});
 function spollers() {
   const spollersArray = document.querySelectorAll("[data-fls-spollers]");
   if (spollersArray.length > 0) {
@@ -5903,201 +6335,6 @@ function initSliders() {
   }
 }
 document.querySelector("[data-fls-slider]") ? window.addEventListener("load", initSliders) : null;
-function menuInit() {
-  console.log("Menu JS loaded");
-  document.addEventListener("click", function(e) {
-    const burger = e.target.closest("[data-fls-menu]");
-    console.log("Click event detected", burger);
-    if (bodyLockStatus && burger) {
-      const menuOpen = document.documentElement.hasAttribute("data-fls-menu-open");
-      if (!menuOpen) {
-        history.pushState({ flsMenuOpen: true }, "");
-      }
-      bodyLockToggle();
-      document.documentElement.toggleAttribute("data-fls-menu-open");
-    }
-  });
-  window.addEventListener("popstate", function(e) {
-    if (document.documentElement.hasAttribute("data-fls-menu-open")) {
-      history.pushState(null, "");
-      document.documentElement.removeAttribute("data-fls-menu-open");
-      bodyLockToggle();
-    }
-  });
-}
-window.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector("[data-fls-menu]")) {
-    menuInit();
-  }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const html = document.documentElement;
-  const button = document.querySelector(".header__theme-switcher");
-  const moon = document.querySelector(".moon");
-  function updateToggle() {
-    if (html.hasAttribute("data-fls-darklite-light")) {
-      moon.classList.add("sun");
-      button.classList.add("day");
-    } else {
-      moon.classList.remove("sun");
-      button.classList.remove("day");
-    }
-  }
-  updateToggle();
-  const observer = new MutationObserver(updateToggle);
-  observer.observe(html, { attributes: true });
-});
-function headerScroll() {
-  const header = document.querySelector("[data-fls-header-scroll]");
-  const headerShow = header.hasAttribute("data-fls-header-scroll-show");
-  const headerShowTimer = header.dataset.flsHeaderScrollShow ? header.dataset.flsHeaderScrollShow : 500;
-  const startPoint = header.dataset.flsHeaderScroll ? header.dataset.flsHeaderScroll : 1;
-  let scrollDirection = 0;
-  let timer;
-  document.addEventListener("scroll", function(e) {
-    const scrollTop = window.scrollY;
-    clearTimeout(timer);
-    if (scrollTop >= startPoint) {
-      !header.classList.contains("--header-scroll") ? header.classList.add("--header-scroll") : null;
-      if (headerShow) {
-        if (scrollTop > scrollDirection) {
-          header.classList.contains("--header-show") ? header.classList.remove("--header-show") : null;
-        } else {
-          !header.classList.contains("--header-show") ? header.classList.add("--header-show") : null;
-        }
-        timer = setTimeout(() => {
-          !header.classList.contains("--header-show") ? header.classList.add("--header-show") : null;
-        }, headerShowTimer);
-      }
-    } else {
-      header.classList.contains("--header-scroll") ? header.classList.remove("--header-scroll") : null;
-      if (headerShow) {
-        header.classList.contains("--header-show") ? header.classList.remove("--header-show") : null;
-      }
-    }
-    scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
-  });
-}
-document.querySelector("[data-fls-header-scroll]") ? window.addEventListener("load", headerScroll) : null;
-class DynamicAdapt {
-  constructor() {
-    this.type = "max";
-    this.init();
-  }
-  init() {
-    this.objects = [];
-    this.daClassname = "--dynamic";
-    this.nodes = [...document.querySelectorAll("[data-fls-dynamic]")];
-    this.nodes.forEach((node) => {
-      const data = node.dataset.flsDynamic.trim();
-      const dataArray = data.split(`,`);
-      const object = {};
-      object.element = node;
-      object.parent = node.parentNode;
-      object.destinationParent = dataArray[3] ? node.closest(dataArray[3].trim()) || document : document;
-      dataArray[3] ? dataArray[3].trim() : null;
-      const objectSelector = dataArray[0] ? dataArray[0].trim() : null;
-      if (objectSelector) {
-        const foundDestination = object.destinationParent.querySelector(objectSelector);
-        if (foundDestination) {
-          object.destination = foundDestination;
-        }
-      }
-      object.breakpoint = dataArray[1] ? dataArray[1].trim() : `767.98`;
-      object.place = dataArray[2] ? dataArray[2].trim() : `last`;
-      object.index = this.indexInParent(object.parent, object.element);
-      this.objects.push(object);
-    });
-    this.arraySort(this.objects);
-    this.mediaQueries = this.objects.map(({ breakpoint }) => `(${this.type}-width: ${breakpoint / 16}em),${breakpoint}`).filter((item, index, self) => self.indexOf(item) === index);
-    this.mediaQueries.forEach((media) => {
-      const mediaSplit = media.split(",");
-      const matchMedia = window.matchMedia(mediaSplit[0]);
-      const mediaBreakpoint = mediaSplit[1];
-      const objectsFilter = this.objects.filter(({ breakpoint }) => breakpoint === mediaBreakpoint);
-      matchMedia.addEventListener("change", () => {
-        this.mediaHandler(matchMedia, objectsFilter);
-      });
-      this.mediaHandler(matchMedia, objectsFilter);
-    });
-  }
-  mediaHandler(matchMedia, objects) {
-    if (matchMedia.matches) {
-      objects.forEach((object) => {
-        if (object.destination) {
-          this.moveTo(object.place, object.element, object.destination);
-        }
-      });
-    } else {
-      objects.forEach(({ parent, element, index }) => {
-        if (element.classList.contains(this.daClassname)) {
-          this.moveBack(parent, element, index);
-        }
-      });
-    }
-  }
-  moveTo(place, element, destination) {
-    element.classList.add(this.daClassname);
-    const index = place === "last" || place === "first" ? place : parseInt(place, 10);
-    if (index === "last" || index >= destination.children.length) {
-      destination.append(element);
-    } else if (index === "first") {
-      destination.prepend(element);
-    } else {
-      destination.children[index].before(element);
-    }
-  }
-  moveBack(parent, element, index) {
-    element.classList.remove(this.daClassname);
-    if (parent.children[index] !== void 0) {
-      parent.children[index].before(element);
-    } else {
-      parent.append(element);
-    }
-  }
-  indexInParent(parent, element) {
-    return [...parent.children].indexOf(element);
-  }
-  arraySort(arr) {
-    if (this.type === "min") {
-      arr.sort((a, b) => {
-        if (a.breakpoint === b.breakpoint) {
-          if (a.place === b.place) {
-            return 0;
-          }
-          if (a.place === "first" || b.place === "last") {
-            return -1;
-          }
-          if (a.place === "last" || b.place === "first") {
-            return 1;
-          }
-          return 0;
-        }
-        return a.breakpoint - b.breakpoint;
-      });
-    } else {
-      arr.sort((a, b) => {
-        if (a.breakpoint === b.breakpoint) {
-          if (a.place === b.place) {
-            return 0;
-          }
-          if (a.place === "first" || b.place === "last") {
-            return 1;
-          }
-          if (a.place === "last" || b.place === "first") {
-            return -1;
-          }
-          return 0;
-        }
-        return b.breakpoint - a.breakpoint;
-      });
-      return;
-    }
-  }
-}
-if (document.querySelector("[data-fls-dynamic]")) {
-  window.addEventListener("load", () => window.flsDynamic = new DynamicAdapt());
-}
 let formValidate = {
   getErrors(form) {
     let error = 0;
@@ -6404,69 +6641,6 @@ class ScrollWatcher {
   }
 }
 document.querySelector("[data-fls-watcher]") ? window.addEventListener("load", () => new ScrollWatcher({})) : null;
-function pageNavigation() {
-  document.addEventListener("click", pageNavigationAction);
-  document.addEventListener("watcherCallback", pageNavigationAction);
-  function pageNavigationAction(e) {
-    if (e.type === "click") {
-      const targetElement = e.target;
-      if (targetElement.closest("[data-fls-scrollto]")) {
-        const gotoLink = targetElement.closest("[data-fls-scrollto]");
-        const gotoLinkSelector = gotoLink.dataset.flsScrollto ? gotoLink.dataset.flsScrollto : "";
-        const noHeader = gotoLink.hasAttribute("data-fls-scrollto-header") ? true : false;
-        const gotoSpeed = gotoLink.dataset.flsScrolltoSpeed ? gotoLink.dataset.flsScrolltoSpeed : 500;
-        const offsetTop = gotoLink.dataset.flsScrolltoTop ? parseInt(gotoLink.dataset.flsScrolltoTop) : 0;
-        if (window.fullpage) {
-          const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest("[data-fls-fullpage-section]");
-          const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.flsFullpageId : null;
-          if (fullpageSectionId !== null) {
-            window.fullpage.switchingSection(fullpageSectionId);
-            if (document.documentElement.hasAttribute("data-fls-menu-open")) {
-              bodyUnlock();
-              document.documentElement.removeAttribute("data-fls-menu-open");
-            }
-          }
-        } else {
-          gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
-        }
-        e.preventDefault();
-      }
-    } else if (e.type === "watcherCallback" && e.detail) {
-      const entry = e.detail.entry;
-      const targetElement = entry.target;
-      if (targetElement.dataset.flsWatcher === "navigator") {
-        document.querySelector(`[data-fls-scrollto].--navigator-active`);
-        let navigatorCurrentItem;
-        if (targetElement.id && document.querySelector(`[data-fls-scrollto="#${targetElement.id}"]`)) {
-          navigatorCurrentItem = document.querySelector(`[data-fls-scrollto="#${targetElement.id}"]`);
-        } else if (targetElement.classList.length) {
-          for (let index = 0; index < targetElement.classList.length; index++) {
-            const element = targetElement.classList[index];
-            if (document.querySelector(`[data-fls-scrollto=".${element}"]`)) {
-              navigatorCurrentItem = document.querySelector(`[data-fls-scrollto=".${element}"]`);
-              break;
-            }
-          }
-        }
-        if (entry.isIntersecting) {
-          navigatorCurrentItem ? navigatorCurrentItem.classList.add("--navigator-active") : null;
-        } else {
-          navigatorCurrentItem ? navigatorCurrentItem.classList.remove("--navigator-active") : null;
-        }
-      }
-    }
-  }
-  if (getHash()) {
-    let goToHash;
-    if (document.querySelector(`#${getHash()}`)) {
-      goToHash = `#${getHash()}`;
-    } else if (document.querySelector(`.${getHash()}`)) {
-      goToHash = `.${getHash()}`;
-    }
-    goToHash ? gotoBlock(goToHash) : null;
-  }
-}
-document.querySelector("[data-fls-scrollto]") ? window.addEventListener("load", pageNavigation) : null;
 class Parallax {
   constructor(elements) {
     if (elements.length) {
@@ -6617,177 +6791,3 @@ class MousePRLX {
   }
 }
 document.querySelector("[data-fls-mouse]") ? window.addEventListener("load", new MousePRLX({})) : null;
-function getHours() {
-  const now2 = /* @__PURE__ */ new Date();
-  const hours = now2.getHours();
-  return hours;
-}
-function darkliteInit() {
-  const htmlBlock = document.documentElement;
-  const saveUserTheme = localStorage.getItem("fls-user-theme");
-  let userTheme;
-  if (document.querySelector("[data-fls-darklite-time]")) {
-    let customRange = document.querySelector("[data-fls-darklite-time]").dataset.flsDarkliteTime;
-    customRange = customRange || "18,5";
-    const timeFrom = +customRange.split(",")[0];
-    const timeTo = +customRange.split(",")[1];
-    console.log(timeFrom);
-    userTheme = getHours() >= timeFrom && getHours() <= timeTo ? "dark" : "light";
-  } else {
-    userTheme = "dark";
-  }
-  const themeButton = document.querySelector("[data-fls-darklite-set]");
-  const resetButton = document.querySelector("[data-fls-darklite-reset]");
-  if (themeButton) {
-    themeButton.addEventListener("click", function(e) {
-      changeTheme(true);
-    });
-  }
-  if (resetButton) {
-    resetButton.addEventListener("click", function(e) {
-      localStorage.setItem("fls-user-theme", "");
-    });
-  }
-  function setThemeClass() {
-    htmlBlock.setAttribute(`data-fls-darklite-${saveUserTheme ? saveUserTheme : userTheme}`, "");
-  }
-  setThemeClass();
-  function changeTheme(saveTheme = false) {
-    let currentTheme = htmlBlock.hasAttribute("data-fls-darklite-light") ? "light" : "dark";
-    let newTheme;
-    if (currentTheme === "light") {
-      newTheme = "dark";
-    } else if (currentTheme === "dark") {
-      newTheme = "light";
-    }
-    htmlBlock.removeAttribute(`data-fls-darklite-${currentTheme}`);
-    htmlBlock.setAttribute(`data-fls-darklite-${newTheme}`, "");
-    saveTheme ? localStorage.setItem("fls-user-theme", newTheme) : null;
-  }
-}
-document.querySelector("[data-fls-darklite]") ? window.addEventListener("load", darkliteInit) : null;
-window.addEventListener("load", () => {
-  document.body.classList.add("transition-ready");
-});
-const locales = [
-  "en-GB",
-  "de-DE",
-  "uk-UA"
-];
-const dropdownBtn = document.getElementById("dropdown-btn");
-const dropdownContent = document.getElementById("dropdown-content");
-function getFlagSrc(countryCode) {
-  if (!countryCode) return "";
-  return `https://flagsapi.com/${countryCode.toUpperCase()}/shiny/64.png`;
-}
-function getNestedTranslation(obj, path) {
-  return path.split(".").reduce((acc, key) => acc && acc[key] !== void 0 ? acc[key] : null, obj);
-}
-async function loadLanguage(locale) {
-  const pageName = window.location.pathname.split("/").pop().replace(".html", "") || "index";
-  const langCode = locale.split("-")[0];
-  try {
-    const [commonRes, pageRes] = await Promise.all([
-      fetch(`files/lang/${langCode}/common.json`),
-      fetch(`files/lang/${langCode}/${pageName}.json`)
-    ]);
-    const [commonTranslations, pageTranslations] = await Promise.all([
-      commonRes.json(),
-      pageRes.json()
-    ]);
-    const translations = { ...commonTranslations, ...pageTranslations };
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const value = getNestedTranslation(translations, key);
-      if (value !== null && value !== void 0) el.innerHTML = value;
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      const value = getNestedTranslation(translations, key);
-      if (value !== null && value !== void 0) el.placeholder = value;
-    });
-    document.querySelectorAll("select[data-fls-select]").forEach((select) => {
-      select.querySelectorAll("option[data-i18n]").forEach((option) => {
-        const key = option.dataset.i18n;
-        const value = getNestedTranslation(translations, key);
-        if (value !== null && value !== void 0) option.textContent = value;
-      });
-      const selectItem = select.parentElement.querySelector(".select__body");
-      if (selectItem) {
-        const buttons = selectItem.querySelectorAll(".select__option");
-        buttons.forEach((btn) => {
-          const val = btn.dataset.flsSelectValue;
-          const correspondingOption = select.querySelector(`option[value="${val}"]`);
-          if (correspondingOption) {
-            btn.innerHTML = correspondingOption.textContent;
-          }
-        });
-        const selectedOption = select.options[select.selectedIndex];
-        const titleContent = selectItem.querySelector(".select__title .select__content");
-        if (titleContent && selectedOption) {
-          titleContent.textContent = selectedOption.textContent;
-        }
-      }
-    });
-    const metaTitle = getNestedTranslation(translations, "_metaTitle");
-    const metaDescription = getNestedTranslation(translations, "_metaDescription");
-    if (metaTitle) document.title = metaTitle;
-    if (metaDescription) {
-      let meta = document.querySelector('meta[name="description"]');
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.name = "description";
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", metaDescription);
-    }
-    document.documentElement.lang = langCode;
-    return locale;
-  } catch (err) {
-    console.error("Translation load error:", err);
-    return locale;
-  }
-}
-function setSelectedLocale(locale) {
-  const intlLocale = new Intl.Locale(locale);
-  const region = intlLocale.region || locale.split("-")[1] || "GB";
-  const langName = new Intl.DisplayNames([locale], { type: "language" }).of(intlLocale.language);
-  dropdownBtn.innerHTML = `<img src="${getFlagSrc(region)}" alt="${langName} flag"><span class="lang-name">${langName}</span><span class="arrow-down"></span>`;
-  dropdownContent.innerHTML = "";
-  locales.filter((l) => l !== locale).forEach((other) => {
-    const otherIntl = new Intl.Locale(other);
-    const otherRegion = otherIntl.region || other.split("-")[1] || "GB";
-    const otherName = new Intl.DisplayNames([other], { type: "language" }).of(otherIntl.language);
-    const li = document.createElement("li");
-    li.innerHTML = `<img src="${getFlagSrc(otherRegion)}" alt="${otherName} flag"><span class="locale-name">${otherName}</span>`;
-    li.addEventListener("click", () => {
-      setLanguage(other);
-      dropdown.classList.remove("open");
-    });
-    dropdownContent.appendChild(li);
-  });
-}
-async function setLanguage(locale) {
-  localStorage.setItem("selectedLang", locale);
-  await loadLanguage(locale);
-  setSelectedLocale(locale);
-}
-document.addEventListener("DOMContentLoaded", async () => {
-  let saved = localStorage.getItem("selectedLang");
-  if (!saved) {
-    const browserLang = new Intl.Locale(navigator.language).language;
-    const matched = locales.find((l) => new Intl.Locale(l).language === browserLang);
-    saved = matched || "en-GB";
-    localStorage.setItem("selectedLang", saved);
-  }
-  await loadLanguage(saved);
-  setSelectedLocale(saved);
-});
-const dropdown = document.querySelector(".header__language-dropdown");
-dropdownBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  dropdown.classList.toggle("open");
-});
-document.addEventListener("click", () => {
-  dropdown.classList.remove("open");
-});

@@ -203,7 +203,6 @@ function menuInit() {
   console.log("Menu JS loaded");
   document.addEventListener("click", function(e) {
     const burger = e.target.closest("[data-fls-menu]");
-    console.log("Click event detected", burger);
     if (bodyLockStatus && burger) {
       const menuOpen = document.documentElement.hasAttribute("data-fls-menu-open");
       if (!menuOpen) {

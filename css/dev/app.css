@@ -928,6 +928,7 @@ html[data-fls-darklite-dark] .privacy-policy__background-image--light {
   display: flex;
   flex-direction: column;
   gap: 0.9375rem;
+  align-items: center;
 }
 .footer__info {
   color: #fff;

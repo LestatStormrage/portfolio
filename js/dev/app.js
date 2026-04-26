@@ -456,6 +456,102 @@ function pageNavigation() {
   }
 }
 document.querySelector("[data-fls-scrollto]") ? window.addEventListener("load", pageNavigation) : null;
+class Parallax {
+  constructor(elements) {
+    if (elements.length) {
+      this.elements = Array.from(elements).map((el) => new Parallax.Each(el, this.options));
+    }
+  }
+  destroyEvents() {
+    this.elements.forEach((el) => {
+      el.destroyEvents();
+    });
+  }
+  setEvents() {
+    this.elements.forEach((el) => {
+      el.setEvents();
+    });
+  }
+}
+Parallax.Each = class {
+  constructor(parent) {
+    this.parent = parent;
+    this.elements = this.parent.querySelectorAll("[data-fls-parallax]");
+    this.animation = this.animationFrame.bind(this);
+    this.offset = 0;
+    this.value = 0;
+    this.smooth = parent.dataset.flsParallaxSmooth ? Number(parent.dataset.flsParallaxSmooth) : 15;
+    this.setEvents();
+  }
+  setEvents() {
+    this.animationID = window.requestAnimationFrame(this.animation);
+  }
+  destroyEvents() {
+    window.cancelAnimationFrame(this.animationID);
+  }
+  animationFrame() {
+    const topToWindow = this.parent.getBoundingClientRect().top;
+    const heightParent = this.parent.offsetHeight;
+    const heightWindow = document.documentElement.clientHeight;
+    const positionParent = {
+      top: topToWindow - heightWindow,
+      bottom: topToWindow + heightParent
+    };
+    const centerPoint = this.parent.dataset.flsParallaxCenter ? this.parent.dataset.flsParallaxCenter : "center";
+    if (positionParent.top < 30 && positionParent.bottom > -30) {
+      switch (centerPoint) {
+        // верхній точці (початок батька стикається верхнього краю екрану)
+        case "top":
+          this.offset = -1 * topToWindow;
+          break;
+        // центрі екрана (середина батька у середині екрана)
+        case "center":
+          this.offset = heightWindow / 2 - (topToWindow + heightParent / 2);
+          break;
+        // Початок: нижня частина екрана = верхня частина батька
+        case "bottom":
+          this.offset = heightWindow - (topToWindow + heightParent);
+          break;
+      }
+    }
+    this.value = this.offset;
+    this.animationID = window.requestAnimationFrame(this.animation);
+    this.elements.forEach((el) => {
+      const parameters = {
+        axis: el.dataset.axis ? el.dataset.axis : "v",
+        direction: el.dataset.flsParallaxDirection ? el.dataset.flsParallaxDirection + "1" : "-1",
+        coefficient: el.dataset.flsParallaxCoefficient ? Number(el.dataset.flsParallaxCoefficient) : 5,
+        min: el.dataset.flsParallaxMin !== void 0 ? Number(el.dataset.flsParallaxMin) : null,
+        max: el.dataset.flsParallaxMax !== void 0 ? Number(el.dataset.flsParallaxMax) : null,
+        additionalProperties: el.dataset.flsParallaxProperties ? el.dataset.flsParallaxProperties : ""
+      };
+      this.parameters(el, parameters);
+    });
+  }
+  parameters(el, parameters) {
+    let translateValue = parameters.direction * (this.value / parameters.coefficient);
+    if (parameters.min !== null) {
+      translateValue = Math.max(parameters.min, translateValue);
+    }
+    if (parameters.max !== null) {
+      translateValue = Math.min(parameters.max, translateValue);
+    }
+    if (parameters.axis === "v") {
+      el.style.transform = `
+			translate3D(0, ${translateValue.toFixed(2)}px, 0)
+			${parameters.additionalProperties}
+		`;
+    } else if (parameters.axis === "h") {
+      el.style.transform = `
+			translate3D(${translateValue.toFixed(2)}px, 0, 0)
+			${parameters.additionalProperties}
+		`;
+    }
+  }
+};
+if (document.querySelector("[data-fls-parallax-parent]")) {
+  new Parallax(document.querySelectorAll("[data-fls-parallax-parent]"));
+}
 function getHours() {
   const now2 = /* @__PURE__ */ new Date();
   const hours = now2.getHours();
@@ -753,102 +849,6 @@ function colorShift(el, group) {
 }
 function rand(min, max) {
   return Math.random() * (max - min) + min;
-}
-class Parallax {
-  constructor(elements) {
-    if (elements.length) {
-      this.elements = Array.from(elements).map((el) => new Parallax.Each(el, this.options));
-    }
-  }
-  destroyEvents() {
-    this.elements.forEach((el) => {
-      el.destroyEvents();
-    });
-  }
-  setEvents() {
-    this.elements.forEach((el) => {
-      el.setEvents();
-    });
-  }
-}
-Parallax.Each = class {
-  constructor(parent) {
-    this.parent = parent;
-    this.elements = this.parent.querySelectorAll("[data-fls-parallax]");
-    this.animation = this.animationFrame.bind(this);
-    this.offset = 0;
-    this.value = 0;
-    this.smooth = parent.dataset.flsParallaxSmooth ? Number(parent.dataset.flsParallaxSmooth) : 15;
-    this.setEvents();
-  }
-  setEvents() {
-    this.animationID = window.requestAnimationFrame(this.animation);
-  }
-  destroyEvents() {
-    window.cancelAnimationFrame(this.animationID);
-  }
-  animationFrame() {
-    const topToWindow = this.parent.getBoundingClientRect().top;
-    const heightParent = this.parent.offsetHeight;
-    const heightWindow = document.documentElement.clientHeight;
-    const positionParent = {
-      top: topToWindow - heightWindow,
-      bottom: topToWindow + heightParent
-    };
-    const centerPoint = this.parent.dataset.flsParallaxCenter ? this.parent.dataset.flsParallaxCenter : "center";
-    if (positionParent.top < 30 && positionParent.bottom > -30) {
-      switch (centerPoint) {
-        // верхній точці (початок батька стикається верхнього краю екрану)
-        case "top":
-          this.offset = -1 * topToWindow;
-          break;
-        // центрі екрана (середина батька у середині екрана)
-        case "center":
-          this.offset = heightWindow / 2 - (topToWindow + heightParent / 2);
-          break;
-        // Початок: нижня частина екрана = верхня частина батька
-        case "bottom":
-          this.offset = heightWindow - (topToWindow + heightParent);
-          break;
-      }
-    }
-    this.value = this.offset;
-    this.animationID = window.requestAnimationFrame(this.animation);
-    this.elements.forEach((el) => {
-      const parameters = {
-        axis: el.dataset.axis ? el.dataset.axis : "v",
-        direction: el.dataset.flsParallaxDirection ? el.dataset.flsParallaxDirection + "1" : "-1",
-        coefficient: el.dataset.flsParallaxCoefficient ? Number(el.dataset.flsParallaxCoefficient) : 5,
-        min: el.dataset.flsParallaxMin !== void 0 ? Number(el.dataset.flsParallaxMin) : null,
-        max: el.dataset.flsParallaxMax !== void 0 ? Number(el.dataset.flsParallaxMax) : null,
-        additionalProperties: el.dataset.flsParallaxProperties ? el.dataset.flsParallaxProperties : ""
-      };
-      this.parameters(el, parameters);
-    });
-  }
-  parameters(el, parameters) {
-    let translateValue = parameters.direction * (this.value / parameters.coefficient);
-    if (parameters.min !== null) {
-      translateValue = Math.max(parameters.min, translateValue);
-    }
-    if (parameters.max !== null) {
-      translateValue = Math.min(parameters.max, translateValue);
-    }
-    if (parameters.axis === "v") {
-      el.style.transform = `
-			translate3D(0, ${translateValue.toFixed(2)}px, 0)
-			${parameters.additionalProperties}
-		`;
-    } else if (parameters.axis === "h") {
-      el.style.transform = `
-			translate3D(${translateValue.toFixed(2)}px, 0, 0)
-			${parameters.additionalProperties}
-		`;
-    }
-  }
-};
-if (document.querySelector("[data-fls-parallax-parent]")) {
-  new Parallax(document.querySelectorAll("[data-fls-parallax-parent]"));
 }
 function tabs() {
   const tabs2 = document.querySelectorAll("[data-fls-tabs]");

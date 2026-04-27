@@ -226,11 +226,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 document.addEventListener("DOMContentLoaded", function() {
-  const html2 = document.documentElement;
+  const html = document.documentElement;
   const button = document.querySelector(".header__theme-switcher");
   const moon = document.querySelector(".moon");
   function updateToggle() {
-    if (html2.hasAttribute("data-fls-darklite-light")) {
+    if (html.hasAttribute("data-fls-darklite-light")) {
       moon.classList.add("sun");
       button.classList.add("day");
     } else {
@@ -239,8 +239,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   updateToggle();
-  const observer2 = new MutationObserver(updateToggle);
-  observer2.observe(html2, { attributes: true });
+  const observer = new MutationObserver(updateToggle);
+  observer.observe(html, { attributes: true });
 });
 function headerScroll() {
   const header = document.querySelector("[data-fls-header-scroll]");
@@ -725,21 +725,6 @@ dropdownBtn.addEventListener("click", (e) => {
 });
 document.addEventListener("click", () => {
   dropdown.classList.remove("open");
-});
-const favicon = document.getElementById("favicon");
-const html = document.documentElement;
-function updateFavicon() {
-  if (html.hasAttribute("data-fls-darklite-dark")) {
-    favicon.href = "/assets/img/favicon/favicon-black.ico";
-  } else {
-    favicon.href = "/assets/img/favicon/favicon-white.ico";
-  }
-}
-updateFavicon();
-const observer = new MutationObserver(updateFavicon);
-observer.observe(html, {
-  attributes: true,
-  attributeFilter: ["data-fls-darklite-dark", "data-fls-darklite-light"]
 });
 const fireflyGroups = [
   {
@@ -1581,13 +1566,13 @@ function getRotateFix(swiper) {
     return v;
   };
 }
-function setInnerHTML(el, html2 = "") {
+function setInnerHTML(el, html = "") {
   if (typeof trustedTypes !== "undefined") {
     el.innerHTML = trustedTypes.createPolicy("html", {
       createHTML: (s) => s
-    }).createHTML(html2);
+    }).createHTML(html);
   } else {
-    el.innerHTML = html2;
+    el.innerHTML = html;
   }
 }
 let support;
@@ -1685,7 +1670,7 @@ function Resize({
   emit
 }) {
   const window2 = getWindow();
-  let observer2 = null;
+  let observer = null;
   let animationFrame = null;
   const resizeHandler = () => {
     if (!swiper || swiper.destroyed || !swiper.initialized) return;
@@ -1694,7 +1679,7 @@ function Resize({
   };
   const createObserver = () => {
     if (!swiper || swiper.destroyed || !swiper.initialized) return;
-    observer2 = new ResizeObserver((entries) => {
+    observer = new ResizeObserver((entries) => {
       animationFrame = window2.requestAnimationFrame(() => {
         const {
           width,
@@ -1716,15 +1701,15 @@ function Resize({
         }
       });
     });
-    observer2.observe(swiper.el);
+    observer.observe(swiper.el);
   };
   const removeObserver = () => {
     if (animationFrame) {
       window2.cancelAnimationFrame(animationFrame);
     }
-    if (observer2 && observer2.unobserve && swiper.el) {
-      observer2.unobserve(swiper.el);
-      observer2 = null;
+    if (observer && observer.unobserve && swiper.el) {
+      observer.unobserve(swiper.el);
+      observer = null;
     }
   };
   const orientationChangeHandler = () => {
@@ -1755,7 +1740,7 @@ function Observer({
   const window2 = getWindow();
   const attach = (target, options = {}) => {
     const ObserverFunc = window2.MutationObserver || window2.WebkitMutationObserver;
-    const observer2 = new ObserverFunc((mutations) => {
+    const observer = new ObserverFunc((mutations) => {
       if (swiper.__preventObserver__) return;
       if (mutations.length === 1) {
         emit("observerUpdate", mutations[0]);
@@ -1770,12 +1755,12 @@ function Observer({
         window2.setTimeout(observerUpdate, 0);
       }
     });
-    observer2.observe(target, {
+    observer.observe(target, {
       attributes: typeof options.attributes === "undefined" ? true : options.attributes,
       childList: swiper.isElement || (typeof options.childList === "undefined" ? true : options).childList,
       characterData: typeof options.characterData === "undefined" ? true : options.characterData
     });
-    observers.push(observer2);
+    observers.push(observer);
   };
   const init = () => {
     if (!swiper.params.observer) return;
@@ -1793,8 +1778,8 @@ function Observer({
     });
   };
   const destroy = () => {
-    observers.forEach((observer2) => {
-      observer2.disconnect();
+    observers.forEach((observer) => {
+      observer.disconnect();
     });
     observers.splice(0, observers.length);
   };
@@ -6715,9 +6700,9 @@ class ScrollWatcher {
   }
   // Функція створення нового спостерігача зі своїми налаштуваннями
   scrollWatcherCreate(configWatcher) {
-    this.observer = new IntersectionObserver((entries, observer2) => {
+    this.observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
-        this.scrollWatcherCallback(entry, observer2);
+        this.scrollWatcherCallback(entry, observer);
       });
     }, configWatcher);
   }
@@ -6735,14 +6720,14 @@ class ScrollWatcher {
     }
   }
   // Функція відключення стеження за об'єктом
-  scrollWatcherOff(targetElement, observer2) {
-    observer2.unobserve(targetElement);
+  scrollWatcherOff(targetElement, observer) {
+    observer.unobserve(targetElement);
   }
   // Функція обробки спостереження
-  scrollWatcherCallback(entry, observer2) {
+  scrollWatcherCallback(entry, observer) {
     const targetElement = entry.target;
     this.scrollWatcherIntersecting(entry, targetElement);
-    targetElement.hasAttribute("data-fls-watcher-once") && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer2) : null;
+    targetElement.hasAttribute("data-fls-watcher-once") && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer) : null;
     document.dispatchEvent(new CustomEvent("watcherCallback", {
       detail: {
         entry

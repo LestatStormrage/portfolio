@@ -6,10 +6,12 @@
 		<link rel="preload" href="./assets/fonts/Morpheus.woff2" as="font" type="font/woff2" defer>
 		<link rel="preload" href="./assets/fonts/DarnassianRunes.woff2" as="font" type="font/woff2" defer>
 		<link rel="preload" href="./assets/fonts/Cinzel.woff2" as="font" type="font/woff2" defer>
-		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<!-- <link id="favicon" rel="shortcut icon" href="@img/favicon/favicon-black.ico"> -->
+		<link rel="shortcut icon" href="./assets/img/favicon/favicon-black.ico" media="(prefers-color-scheme: light)">
+		<link rel="shortcut icon" href="./assets/img/favicon/favicon-white.ico" media="(prefers-color-scheme: dark)">
 		<title>Home Page</title>
-		<script defer src="./js/app.min.js?v=1777240893354"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1777240893354">
+		<script defer src="./js/app.min.js?v=1777254256774"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1777254256774">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -734,7 +736,8 @@ commodi.
 													</summary>
 													<div class="spollers__body">
 														Yes, this option is available anytime after the first 12
-                                        months contract. The buyout price is calculated as 50% of the original website cost.
+                                        months contract. The buyout price is calculated as 50% of the original website
+                                        cost.
 													</div>
 												</details>
 											</div>
@@ -755,13 +758,19 @@ commodi.
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>What happens if a payment fails (my card declines / etc)?</span>
+														<span>
+															What happens if a payment fails (my card
+                                            declines / etc)?
+														</span>
 													</summary>
 													<div class="spollers__body">You can always try another payment method.</div>
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>Do you work with international clients and currencies?</span>
+														<span>
+															Do you work with international clients and
+                                            currencies?
+														</span>
 													</summary>
 													<div class="spollers__body">Of course!</div>
 												</details>
@@ -795,33 +804,25 @@ commodi.
 													<label class="form-contact__label" for="email">Email</label>
 													<input id="email" data-fls-input="" data-fls-form-errtext="Email error" required type="email" name="email" placeholder="Email" class="input form-contact__input">
 												</div>
-												<!-- <div data-fls-dynamic=".form-contact__column--last, 767.98, 1" -->
-												<!-- class="form-contact__line"> -->
 												<div data-fls-dynamic=".form-contact__column--last, 767.98, 1" class="form-contact__checkbox checkbox-contact-form">
-													<input data-fls-input="" id="contactUsAgreement" required data-error="Error" class="checkbox-contact-form__input input" type="checkbox" value="1" name="agreement">
+													<input data-fls-input="" id="contactUsAgreement" required class="input checkbox-contact-form__input" type="checkbox" value="1" name="agreement">
 													<label for="contactUsAgreement" class="checkbox-contact-form__label">
 														<div class="checkbox-contact-form__text">
 															<span data-i18n="contact-us.form.agreement.text">
 																I consent to the
-                                                    collection, processing or use of my personal data in accordance with
-                                                    the privacy policy.
+                                                collection, processing or use of my personal data in accordance with
+                                                the privacy policy.
 															</span>
-															<!--
-<span><a href="privacy-policy"
-data-i18n="contact-us.form.agreement.link">privacy policy</a>.
-</span>
--->
 														</div>
 													</label>
 												</div>
-												<!-- </div> -->
 											</div>
 											<div class="form-contact__column form-contact__column--last">
 												<div class="form-contact__line form-contact__line--textarea">
 													<label class="form-contact__label" for="message">Message</label>
 													<textarea id="message" data-fls-input="" autocomplete="off" name="message" placeholder="Message" class="input form-contact__input"></textarea>
 												</div>
-												<button data-fls-dynamic=".contact__form, 767.98, 2" data-fls-button="" type="submit" class="form-contact__button button">
+												<button data-fls-dynamic=".form-contact__body, 767.98, 3" data-fls-button="" type="submit" class="form-contact__button button">
 													<span class="button__decor button__decor--left">w</span>
 													<span class="button__text">send</span>
 													<span class="button__decor button__decor--right">a</span>

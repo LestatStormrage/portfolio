@@ -747,7 +747,6 @@ html[data-fls-darklite-dark] .privacy-policy__background-image--light {
   left: 0;
   margin: 0.0625rem 0 0 0;
   z-index: -1;
-  box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 0.3125rem;
   overflow-y: hidden;
@@ -913,7 +912,7 @@ html[data-fls-darklite-dark] .privacy-policy__background-image--light {
 .footer {
   background: #000;
   position: relative;
-  z-index: 50;
+  z-index: 49;
 }
 .footer::before {
   content: "";
@@ -923,7 +922,7 @@ html[data-fls-darklite-dark] .privacy-policy__background-image--light {
   width: 100%;
   height: 6.25rem;
   background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
-  transform: scale(-1);
+  transform: scale(-1) translateY(-0.0625rem);
 }
 .footer__container {
   display: grid;
@@ -1151,10 +1150,10 @@ html[data-fls-darklite-dark] .privacy-policy__background-image--light {
   filter: drop-shadow(0 0 0.625rem #6e0d81);
 }
 .button__decor--left {
-  animation: reset 3s 0s linear forwards;
+  animation: reset 2s 0s linear forwards;
 }
 .button__decor--right {
-  animation: reset 3s 0s linear forwards;
+  animation: reset 2s 0s linear forwards;
 }
 .button__text {
   transition: text-shadow 0.3s;
@@ -2944,12 +2943,16 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
   min-height: 3.125rem;
 }
 .form-contact__button {
-  justify-self: end;
   align-self: center;
+  justify-self: center;
 }
 
 .checkbox-contact-form__input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 .checkbox-contact-form__input:checked + .checkbox-contact-form__label::after {
   opacity: 1;
@@ -2969,6 +2972,10 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
   height: 0.875rem;
   background-color: #fff;
   flex-shrink: 0;
+}
+.--form-error .checkbox-contact-form__label::before {
+  border: 0.125rem solid #790000;
+  box-shadow: 0 0 0.9375rem #790000;
 }
 .checkbox-contact-form__label::after {
   content: "";
@@ -3903,9 +3910,7 @@ textarea.input {
   }
   .form-contact__button {
     position: relative;
-    padding-top: 1.875rem;
-    left: 50%;
-    transform: translate(-50%, 0);
+    padding-top: 0.625rem;
     color: #000;
   }
   .swiper-prev {
@@ -4676,6 +4681,9 @@ textarea.input {
   }
   .contact__body {
     width: 100%;
+  }
+  .form-contact__button {
+    justify-self: end;
   }
 }
 

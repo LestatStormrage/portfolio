@@ -207,10 +207,10 @@ input:-webkit-autofill:focus {
 .privacy-policy__background {
   position: fixed;
   z-index: 0;
-  top: -5%;
+  top: -10%;
   left: 0;
-  width: 110vw;
-  height: 110lvh;
+  width: 100vw;
+  height: 125lvh;
   display: grid;
 }
 .privacy-policy__background > * {
@@ -283,9 +283,6 @@ input:-webkit-autofill:focus {
   background-color: #727272;
   z-index: 10;
   box-shadow: 0rem 0rem 0.0625rem 0.09375rem #000000;
-}
-.privacy-policy__title {
-  font-family: var(--secondaryFontFamily);
 }
 .privacy-policy__section {
   border-radius: 0.625rem;
@@ -1595,6 +1592,9 @@ html[data-fls-darklite-dark] .legal-disclosure__bg-image--light {
 .hero__title {
   text-align: center;
   font-family: "Staatliches", sans-serif;
+}
+.hero__title-primary {
+  font-weight: 700;
 }
 .hero__title-secondary {
   display: block;
@@ -3761,7 +3761,10 @@ textarea.input {
   .pricing__tiers {
     grid-template-columns: 1fr;
   }
-  [open] .spollers__title {
+  [data-fls-darklite-light] [open] .spollers__title {
+    background: #ab58ee;
+  }
+  [data-fls-darklite-dark] [open] .spollers__title {
     background: rgba(40, 35, 126, 0.5882352941);
   }
   .spollers__item[open] {
@@ -3788,9 +3791,6 @@ textarea.input {
   }
   .form-contact__column:not(:last-child) {
     gap: 0.625rem;
-  }
-  .form-contact__line--textarea {
-    margin-bottom: 1.25rem;
   }
 }
 
@@ -3960,9 +3960,6 @@ textarea.input {
   }
   .privacy-policy__body {
     padding-left: 3.125rem;
-  }
-  .privacy-policy__title-box {
-    padding-bottom: 1.25rem;
   }
   .privacy-policy__title {
     font-size: 1.5rem;
@@ -4282,9 +4279,6 @@ textarea.input {
   .form-contact__column:not(:last-child) {
     gap: 6.25rem;
   }
-  .form-contact__line--textarea {
-    margin-bottom: 6.25rem;
-  }
 }
 
 @media (width > 20em) and (width <= 120em){
@@ -4312,11 +4306,8 @@ textarea.input {
   .privacy-policy__body {
     padding-left: clamp( 3.125rem , 1.25rem  +  9.375vw , 12.5rem );
   }
-  .privacy-policy__title-box {
-    padding-bottom: clamp( 1.25rem , 0.875rem  +  1.875vw , 3.125rem );
-  }
   .privacy-policy__title {
-    font-size: clamp( 1.5rem , 1.275rem  +  1.125vw , 2.625rem );
+    font-size: clamp( 1.5rem , 1.2rem  +  1.5vw , 3rem );
   }
   .privacy-policy__section {
     padding: clamp( 1.25rem , 0.875rem  +  1.875vw , 3.125rem );
@@ -4703,9 +4694,6 @@ textarea.input {
   .form-contact__column:not(:last-child) {
     gap: clamp( 0.625rem , -0.5rem  +  5.625vw , 6.25rem );
   }
-  .form-contact__line--textarea {
-    margin-bottom: clamp( 1.25rem , 0.25rem  +  5vw , 6.25rem );
-  }
 }
 
 @media (width > 61.99875em) and (width <= 120em){
@@ -4836,11 +4824,8 @@ textarea.input {
   .privacy-policy__body {
     padding-left: 12.5rem;
   }
-  .privacy-policy__title-box {
-    padding-bottom: 3.125rem;
-  }
   .privacy-policy__title {
-    font-size: 2.625rem;
+    font-size: 3rem;
   }
   .privacy-policy__section {
     padding: 3.125rem;

@@ -242,6 +242,23 @@ document.addEventListener("DOMContentLoaded", function() {
   const observer = new MutationObserver(updateToggle);
   observer.observe(html, { attributes: true });
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const html = document.documentElement;
+  const button = document.querySelector(".header__theme-switcher");
+  const moon = document.querySelector(".moon");
+  function updateToggle() {
+    if (html.hasAttribute("data-fls-darklite-light")) {
+      moon.classList.add("sun");
+      button.classList.add("day");
+    } else {
+      moon.classList.remove("sun");
+      button.classList.remove("day");
+    }
+  }
+  updateToggle();
+  const observer = new MutationObserver(updateToggle);
+  observer.observe(html, { attributes: true });
+});
 function headerScroll() {
   const header = document.querySelector("[data-fls-header-scroll]");
   const headerShow = header.hasAttribute("data-fls-header-scroll-show");

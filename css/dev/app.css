@@ -3077,6 +3077,15 @@ html[data-fls-darklite-dark] .projects__quill-image {
   outline: 0.0625rem dashed #fff;
   text-align: center;
 }
+.tier-pricing__body--basic {
+  filter: contrast(110%) hue-rotate(42deg);
+}
+.tier-pricing__body--advanced {
+  filter: contrast(110%) hue-rotate(26deg);
+}
+.tier-pricing__body--subscription {
+  filter: sepia(14%) contrast(122%) hue-rotate(26deg);
+}
 .tier-pricing__label {
   position: absolute;
   top: 2.5rem;
@@ -3269,6 +3278,20 @@ html[data-fls-darklite-dark] .pricing__background-image--light {
 .spollers__body {
   position: relative;
   z-index: 3;
+}
+
+.contact {
+  position: relative;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.25rem;
+  background: url("../assets/img/textures/wall-horizontal.avif") 0 0/auto 6.25rem repeat-x;
+  transform: translateY(-0.0625rem);
 }
 .contact__container {
   position: relative;
@@ -4678,7 +4701,7 @@ textarea.input {
     padding-bottom: 3.125rem;
   }
   .contact__container {
-    padding-block: 2.5rem;
+    padding-top: 6.25rem;
   }
   .contact__title {
     margin-bottom: 0.625rem;
@@ -5032,7 +5055,7 @@ textarea.input {
     padding-bottom: clamp( 3.125rem , 1.25rem  +  9.375vw , 12.5rem );
   }
   .contact__container {
-    padding-block: clamp( 2.5rem , 1.75rem  +  3.75vw , 6.25rem );
+    padding-top: clamp( 6.25rem , 5rem  +  6.25vw , 12.5rem );
   }
   .contact__title {
     margin-bottom: clamp( 0.625rem , 0.25rem  +  1.875vw , 2.5rem );
@@ -5568,7 +5591,7 @@ textarea.input {
     padding-bottom: 12.5rem;
   }
   .contact__container {
-    padding-block: 6.25rem;
+    padding-top: 12.5rem;
   }
   .contact__title {
     margin-bottom: 2.5rem;

@@ -9,9 +9,9 @@
 		<!-- <link id="favicon" rel="shortcut icon" href="@img/favicon/favicon-black.ico"> -->
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon-black.ico" media="(prefers-color-scheme: light)">
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon-white.ico" media="(prefers-color-scheme: dark)">
-		<title>Home Page</title>
-		<script defer src="./js/app.min.js?v=1777598588570"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1777598588570">
+		<title>Stormrage Web</title>
+		<script defer src="./js/app.min.js?v=1777998231938"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1777998231938">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -66,7 +66,7 @@
 												<span class="menu__link-decor">r</span>
 											</a>
 										</li>
-										<li class="menu__item">
+										<li class="menu__item menu__item--contact">
 											<a href="#" class="menu__link" data-fls-scrollto=".contact" data-fls-scrollto-top="100">
 												<span class="menu__link-decor">o</span>
 												<span data-i18n="menu.link.contact">get started</span>
@@ -132,10 +132,11 @@
 						</div>
 						<div class="hero__title-box hero__layer hero__layer--8">
 							<h1 data-fls-parallax="" data-fls-parallax-coefficient="8" class="hero__title">
-								<span class="hero__title-primary">Stormrage</span>
-								<span class="hero__title-secondary">web</span>
+								<span class="hero__title-primary" data-i18n="main-page.hero.title.main">Stormrage</span>
+								<span class="hero__title-secondary" data-i18n="main-page.hero.title.">web</span>
 							</h1>
-							<h3 class="hero__description"></h3>
+							<h3 data-fls-parallax="" data-fls-parallax-coefficient="8" class="hero__description" data-i18n="main-page.hero.title.description">Fast, secure and unique
+                websites</h3>
 						</div>
 					</section>
 					<section data-fls-parallax-parent="" id="about" class="page__hero hero hero--mobile">
@@ -176,9 +177,11 @@ class="hero__layer hero__layer--1">
 						</div>
 						<div class="hero__title-box hero__layer hero__layer--8">
 							<h1 data-fls-parallax="" data-fls-parallax-coefficient="10" class="hero__title">
-								<span class="hero__title-primary">Stormrage</span>
-								<span class="hero__title-secondary">web</span>
+								<span class="hero__title-primary" data-i18n="main-page.hero.title.main">Stormrage</span>
+								<span class="hero__title-secondary" data-i18n="main-page.hero.title.secondary">web</span>
 							</h1>
+							<h3 data-fls-parallax="" data-fls-parallax-coefficient="10" class="hero__description" data-i18n="main-page.hero.title.description">Fast, secure and unique
+                websites</h3>
 						</div>
 					</section>
 					<section class="page__about about">
@@ -200,24 +203,27 @@ class="hero__layer hero__layer--1">
 								</div>
 								<div data-fls-dynamic=".media-about, 991.98, 1" class="about__content">
 									<div class="about__title-box title-box">
-										<h2 class="about__title title">About me</h2>
+										<h2 class="about__title title" data-i18n="main-page.about.title">About me</h2>
 									</div>
 									<div class="about__text">
-										<p>
-											Hi! My name is Ivan. I’m originally from Ukraine, live in Germany. I’ve explored
+										<p data-i18n="main-page.about.text.paragraph-1">
+											Hi! My name is Ivan. I’m originally from
+                            Ukraine, currently based in Germany. I’ve explored
                             different areas in IT and found web development to be the one I enjoy the most.
 										</p>
-										<p>
+										<p data-i18n="main-page.about.text.paragraph-2">
 											Over time, I
-                            noticed that many websites are built using page builders and pre-made themes, which often
-                            results in slow performance, unnecessary complexity, and limited flexibility. I take a
+                            noticed that many websites rely on page builders and pre-made themes, which often
+                            results in slow performance, unnecessary complexity, limited flexibility, and overall many
+                            websites today look more or less the same. I take a
                             different
                             approach - I build websites from scratch, writing all code manually. This allows me to
                             create
-                            fast and secure websites with very custom design.
+                            fast and secure websites with custom design.
 										</p>
-										<p>
-											I also understand that a large upfront investment in a good website isn’t always ideal or
+										<p data-i18n="main-page.about.text.paragraph-3">
+											I also noticed that a large upfront investment
+                            in a good website isn’t always ideal or
                             affordable,
                             especially for small businesses. This is why, to make things more
                             flexible, I also offer a subscription-based option. With this model,
@@ -262,7 +268,7 @@ class="hero__layer hero__layer--1">
 									</figure>
 								</figure>
 								<div class="projects__title-box title-box">
-									<h2 class="projects__title title" data-i18n="projects.title">My projects</h2>
+									<h2 class="projects__title title" data-i18n="main-page.projects.title">My projects</h2>
 								</div>
 								<div class="projects__inner">
 									<div class="projects__decor">
@@ -290,6 +296,7 @@ class="hero__layer hero__layer--1">
 												<a class="project__body" target="_blank" href="https://totem-superfood.com/">
 													<figure class="project__picture">
 														<img class="project__image" alt="project Totem Superfood" src="./assets/img/projects/projects/totem-superfood.avif">
+														<video class="project__preview" src="./assets/img/projects/projects/totem-superfood.webm" muted loop playsinline="" preload="metadata"></video>
 													</figure>
 													<div class="project__name">Totem Superfood</div>
 												</a>
@@ -335,6 +342,7 @@ class="hero__layer hero__layer--1">
 													<figure class="project__picture">
 														<!-- <video class="project__image" src="@img/projects/projects/forever-young-kombucha.webm"></video> -->
 														<img class="project__image" alt="project Totem Biz" src="./assets/img/projects/projects/totem-biz.avif">
+														<video class="project__preview" src="./assets/img/projects/projects/totem-biz.webm" muted loop playsinline="" preload="metadata"></video>
 													</figure>
 													<div class="project__name">Totem Biz</div>
 												</a>
@@ -343,6 +351,7 @@ class="hero__layer hero__layer--1">
 												<a class="project__body" target="_blank" href="https://lestatstormrage.github.io/projects/famirel/">
 													<figure class="project__picture">
 														<img class="project__image" alt="project Famirel" src="./assets/img/projects/projects/famirel.avif">
+														<video class="project__preview" src="./assets/img/projects/projects/famirel.webm" muted loop playsinline="" preload="metadata"></video>
 													</figure>
 													<div class="project__name">Famirel</div>
 												</a>
@@ -450,7 +459,7 @@ class="hero__layer hero__layer--1">
 						<div class="pricing__body">
 							<div class="pricing__container">
 								<div class="pricing__title-box title-box">
-									<h2 class="pricing__title title" data-i18n="pricing.title">Pricing</h2>
+									<h2 class="pricing__title title" data-i18n="main-page.pricing.title">Pricing</h2>
 								</div>
 								<div class="pricing__description description-pricing">
 									<figure class="description-pricing__background">
@@ -458,13 +467,13 @@ class="hero__layer hero__layer--1">
 										<div class="description-pricing__background-image"></div>
 									</figure>
 									<div class="description-pricing__text">
-										<p>
-											Every website project is different. The final cost
+										<p data-i18n="main-page.pricing.description.paragraph-1">
+											Every website project is unique. The final cost
                             depends on the number of pages,
                             design complexity, and additional functionality required.
 										</p>
-										<p>
-											The packages below give a general idea of pricing. After discussing your project, I will
+										<p data-i18n="main-page.pricing.description.paragraph-2">
+											The packages below provide a general idea of pricing. After discussing your project, I will
                             provide
                             a detailed quote special to
                             your project.
@@ -475,21 +484,19 @@ class="hero__layer hero__layer--1">
 									<div class="pricing__tier tier-pricing">
 										<div class="tier-pricing__inner">
 											<div class="tier-pricing__body tier-pricing__body--basic">
-												<h5 class="tier-pricing__name">Tier 1</h5>
-												<div class="tier-pricing__price">1900€</div>
+												<h5 class="tier-pricing__name" data-i18n="main-page.pricing.tiers.1.name">Small Business
+                                    Website</h5>
+												<div class="tier-pricing__price" data-i18n="main-page.pricing.tiers.1.price">1900€</div>
 												<div class="tier-pricing__description">
-													<div class="tier-pricing__description-text">
-														A small, clean, modern website built
-                                        using best
-                                        proven design patterns. Perfect for small businesses that need a professional
-                                        website.
+													<div class="tier-pricing__description-text" data-i18n="main-page.pricing.tiers.1.description">
+														A small but clean modern website built using proven design patterns. Perfect for
+                                        small businesses that need a professional website.
 													</div>
-													<!-- <div class="tier-pricing__list-title">Includes:</div> -->
+													<div class="tier-pricing__list-title" data-i18n="main-page.pricing.tiers.1.list-title">Includes:</div>
 													<ul class="tier-pricing__list">
-														<li class="tier-pricing__list-item">1-3 pages</li>
-														<li class="tier-pricing__list-item">responsive design</li>
-														<li class="tier-pricing__list-item">345</li>
-														<li class="tier-pricing__list-item">456</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.1.list-item.1">- 1-3 pages</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.1.list-item.2">- design + development</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.1.list-item.3">- responsive design (for all screen sizes)</li>
 													</ul>
 												</div>
 											</div>
@@ -498,26 +505,25 @@ class="hero__layer hero__layer--1">
 									<div class="pricing__tier tier-pricing">
 										<div class="tier-pricing__inner">
 											<div class="tier-pricing__body tier-pricing__body--advanced">
-												<h5 class="tier-pricing__name">Tier 2</h5>
-												<div class="tier-pricing__price">3200€</div>
+												<h5 class="tier-pricing__name" data-i18n="main-page.pricing.tiers.2.name">Advanced
+                                    Custom Website</h5>
+												<div class="tier-pricing__price" data-i18n="main-page.pricing.tiers.2.price">3200€</div>
 												<div class="tier-pricing__description">
-													<div class="tier-pricing__description-text">
-														A custom solution with more advanced
+													<div class="tier-pricing__description-text" data-i18n="main-page.pricing.tiers.2.description">
+														A website with more advanced
                                         design, more
                                         pages, features, and greater attention to detail. Ideal for businesses that want
                                         a stronger visual identity.
 													</div>
-													<!-- <div class="tier-pricing__list-title">Includes:</div> -->
+													<div class="tier-pricing__list-title" data-i18n="main-page.pricing.tiers.2.list-title">Includes:</div>
 													<ul class="tier-pricing__list">
-														<li class="tier-pricing__list-item">4-6 pages</li>
-														<li class="tier-pricing__list-item">advanced design and customization</li>
-														<li class="tier-pricing__list-item">responsive design</li>
-														<li class="tier-pricing__list-item">
-															Multilingual support, dark-light mode, contact form are included in the
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.2.list-item.1">- 4-6 pages</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.2.list-item.2">- advanced design and customization + development</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.2.list-item.3">- responsive design (for all screen sizes)</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.2.list-item.4">
+															- multilingual support, dark-light mode, contact form are included in the
                                             price
 														</li>
-														<li class="tier-pricing__list-item">345</li>
-														<li class="tier-pricing__list-item">456</li>
 													</ul>
 												</div>
 											</div>
@@ -526,23 +532,27 @@ class="hero__layer hero__layer--1">
 									<div class="pricing__tier tier-pricing">
 										<div class="tier-pricing__inner">
 											<div class="tier-pricing__body tier-pricing__body--subscription">
-												<div class="tier-pricing__label">most popular</div>
-												<h5 class="tier-pricing__name">Subscription</h5>
-												<div class="tier-pricing__price">160€ / month</div>
+												<div class="tier-pricing__label" data-i18n="main-page.pricing.tiers.most-popular">most
+                                    popular</div>
+												<h5 class="tier-pricing__name" data-i18n="main-page.pricing.tiers.3.name">Subscription</h5>
+												<div class="tier-pricing__price" data-i18n="main-page.pricing.tiers.3.price">160€ /
+                                    month</div>
 												<div class="tier-pricing__description">
-													<div class="tier-pricing__description-text">
+													<div class="tier-pricing__description-text" data-i18n="main-page.pricing.tiers.3.description">
 														A flexible option with no large upfront
                                         cost. Perfect if you prefer to spread the investment over time.
 													</div>
-													<!-- <div class="tier-pricing__list-title">Includes:</div> -->
+													<div class="tier-pricing__list-title" data-i18n="main-page.pricing.tiers.3.list-title">Includes:</div>
 													<ul class="tier-pricing__list">
-														<li class="tier-pricing__list-item">Lifetime Updates</li>
-														<li class="tier-pricing__list-item">
-															Everything from the additional modules list is included in the price (other
-                                            than additional pages fee after 6).
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.3.list-item.1">- 4-6 pages</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.3.list-item.2">- lifetime updates</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.3.list-item.3">
+															- everything from the additional modules list is included in the price
+                                            (other
+                                            than additional pages fee after 6)
 														</li>
-														<li class="tier-pricing__list-item"></li>
-														<li class="tier-pricing__list-item">456</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.3.list-item.4">- advanced design and customization + development</li>
+														<li class="tier-pricing__list-item" data-i18n="main-page.pricing.tiers.3.list-item.5">- responsive design (for all screen sizes)</li>
 													</ul>
 												</div>
 											</div>
@@ -554,40 +564,44 @@ class="hero__layer hero__layer--1">
 										<!-- <img class="modules-pricing__background-image" src="@img/textures/banner-fabric.jpg" alt="fabric background"> -->
 										<div class="modules-pricing__background-image"></div>
 									</figure>
-									<h4 class="modules-pricing__title">Additional modules</h4>
-									<div class="modules-pricing__description">
-										You can extend your website with additional functionality
-                        depending on your needs. Some of these are included in tier 2 and subscription plan.
+									<h4 class="modules-pricing__title" data-i18n="main-page.pricing.modules.title">Additional modules</h4>
+									<div class="modules-pricing__description" data-i18n="main-page.pricing.modules.description">
+										You can
+                        extend your website with additional functionality
+                        depending on your needs. Some of these are included in "Advanced Custom Website" tier and
+                        subscription plan.
 									</div>
 									<ul class="modules-pricing__body">
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Additional page</div>
-											<div class="module-pricing__price">+120€ (per page)</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.additional-page.name">Additional page</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.additional-page.price">+120€ (per page)</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Hosting</div>
-											<div class="module-pricing__price">+25€/month</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.hosting.name">Hosting</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.hosting.price">+25€/month</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Unlimited edits</div>
-											<div class="module-pricing__price">+50€/month</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.unlimited-edits.name">Unlimited edits</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.unlimited-edits.price">+50€/month</div>
+											<div class="module-pricing__description" data-i18n="main-page.pricing.modules.unlimited-edits.description">(12 months minimum)</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Advanced design & customization</div>
-											<div class="module-pricing__price">+300-1500€</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.advanced-design.name">Advanced design &
+                                customization</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.advanced-design.price">+300-1500€</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Multilingual support</div>
-											<div class="module-pricing__price">+500€</div>
-											<div class="module-pricing__description">+50€ per language</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.multilingual.name">Multilingual support</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.multilingual.price">+500€</div>
+											<div class="module-pricing__description" data-i18n="main-page.pricing.modules.multilingual.description">+50€ per language</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Dark / light mode</div>
-											<div class="module-pricing__price">+200€</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.dark-light-mode.name">Dark / light mode</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.dark-light-mode.price">+200€</div>
 										</li>
 										<li class="modules-pricing__module module-pricing">
-											<div class="module-pricing__name">Contact form</div>
-											<div class="module-pricing__price">+150€</div>
+											<div class="module-pricing__name" data-i18n="main-page.pricing.modules.contact-form.name">Contact form</div>
+											<div class="module-pricing__price" data-i18n="main-page.pricing.modules.contact-form.price">+150€</div>
 										</li>
 									</ul>
 								</div>
@@ -597,49 +611,55 @@ class="hero__layer hero__layer--1">
 					<section class="page__faq faq">
 						<div class="faq__container">
 							<div class="faq__title-box title-box">
-								<h2 class="faq__title title">FAQ</h2>
+								<h2 class="faq__title title" data-i18n="main-page.faq.title">FAQ</h2>
 							</div>
 							<div class="faq__body">
 								<div data-fls-tabs="" class="tabs">
 									<div data-fls-tabs-titles="" class="tabs__navigation">
-										<button type="button" class="tabs__title --tab-active">Websites</button>
-										<button type="button" class="tabs__title">Plans</button>
-										<button type="button" class="tabs__title">Payments</button>
+										<button type="button" class="tabs__title --tab-active" data-i18n="main-page.faq.tabs.websites">Websites</button>
+										<button type="button" class="tabs__title" data-i18n="main-page.faq.tabs.plans">Plans</button>
+										<button type="button" class="tabs__title" data-i18n="main-page.faq.tabs.payments">Payments</button>
 									</div>
 									<div data-fls-tabs-body="" class="tabs__content">
 										<div class="tabs__body tabs__body--websites">
 											<div data-fls-spollers="" data-fls-spollers-one="991,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															How long does the website take from start to
+														<span data-i18n="main-page.faq.websites.question-1.question">
+															How long does the
+                                            website take
+                                            from start to
                                             finish?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														This depends of the complexity of the website and the
-                                        amount of content. In average, most projects take between 2-6 weeks.
+														<p data-i18n="main-page.faq.websites.question-1.answer.paragraph-1">
+															This depends of the complexity of the website and the
+                                            amount of content. In average, most projects take between 2-6 weeks.
+														</p>
 													</div>
 													<!-- <div class="spollers__decor"></div> -->
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Why do you write all code by hand instead of
+														<span data-i18n="main-page.faq.websites.question-2.question">
+															Why do you write all
+                                            code by
+                                            hand instead of
                                             using web page builders like the others do?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														<p>
+														<p data-i18n="main-page.faq.websites.question-2.answer.paragraph-1">
 															Building websites with custom code gives me full control over design and
                                             functionality, without being limited by page builders.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.websites.question-2.answer.paragraph-2">
 															It also ensures that the code is clean and optimized, which is often not the
                                             case with page
                                             builders. As a result you're getting fast load times and great performance.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.websites.question-2.answer.paragraph-3">
 															And since the website doesn’t rely on third-party plugins or constant
                                             Wordpress
                                             updates, it’s also much more stable and much less vulnerable to security
@@ -649,74 +669,82 @@ class="hero__layer hero__layer--1">
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Will you make the design for my website
+														<span data-i18n="main-page.faq.websites.question-3.question">
+															Will you make the
+                                            design for
+                                            my website
                                             yourself?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														Yes! If you have any ideas, style direction, preferences or other
-                                        wishes - feel free to share them with me! If you’re not sure how your website
-                                        should look - that's totally fine! You can leave that to me and I'll share
-                                        my design ideas with you and we'll discuss them together.
+														<p data-i18n="main-page.faq.websites.question-3.answer.paragraph-1">
+															Yes! If you have any ideas, style direction, preferences or other
+                                            wishes - feel free to share them with me! If you’re not sure how your
+                                            website
+                                            should look - that's totally fine! You can leave that to me and I'll share
+                                            my design ideas with you and we'll discuss them together.
+														</p>
 													</div>
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Will you host my website or do I have to make
+														<span data-i18n="main-page.faq.websites.question-4.question">
+															Will you host my
+                                            website or do
+                                            I have to make
                                             it myself?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														That’s completely up to you. You can do it yourself or I
-                                        can take care of everything for you - including setup and maintenance. That is
-                                        available for 25€ per month.
+														<p data-i18n="main-page.faq.websites.question-4.answer.paragraph-1">
+															That’s completely up to you. You can do it yourself or I
+                                            can take care of everything for you - including setup and maintenance. That
+                                            is
+                                            available for 25€ per month.
+														</p>
 													</div>
 												</details>
-												<!--
-<details class="spollers__item">
-<summary class="spollers__title"><span>multilingual website</span>
-</summary>
-<div class="spollers__body">Lorem, ipsum dolor sit amet consectetur adipisicing
-elit. Rem repellat fuga at neque accusamus aut officia sit expedita sapiente
-commodi.
-</div>
-</details>
--->
 											</div>
 										</div>
 										<div class="tabs__body tabs__body--plans">
 											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Do you charge for desktop and mobile version
+														<span data-i18n="main-page.faq.plans.question-1.question">
+															Do you charge for
+                                            desktop and mobile version
                                             of the website separately?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														No! All websites I build are fully responsive, meaning
-                                        they automatically adapt to different screen sizes. Desktop, tablet,
-                                        mobile - it'll look great on any device!
+														<p data-i18n="main-page.faq.plans.question-1.answer.paragraph-1">
+															No! All websites I build are fully responsive, meaning
+                                            they automatically adapt to different screen sizes. Desktop, tablet,
+                                            mobile - it'll look great on any device!
+														</p>
 													</div>
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															What does “unlimited edits” for 50€/month
+														<span data-i18n="main-page.faq.plans.question-2.question">
+															What does “unlimited
+                                            edits” for 50€/month
                                             mean?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														<p>
+														<p data-i18n="main-page.faq.plans.question-2.answer.paragraph-1">
 															The unlimited edits option allows you to request small updates and changes
                                             to
                                             your website whenever needed. This includes minor layout adjustments, so
                                             things like updating text, replacing
                                             images, adjusting sections, or adding new content blocks.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.plans.question-2.answer.paragraph-2">
+															The service is billed as a fixed monthly subscription with a minimum
+                                            contract of 12 months.
+														</p>
+														<p data-i18n="main-page.faq.plans.question-2.answer.paragraph-3">
 															It doesn’t cover larger changes such as creating entirely new pages, major
                                             redesigns, or adding complex new features - those are handled as separate
                                             work.
@@ -725,40 +753,54 @@ commodi.
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															I want to sell products through my website.
+														<span data-i18n="main-page.faq.plans.question-3.question">
+															I want to sell products
+                                            through my website.
                                             Do you offer E-commerce?
 														</span>
 													</summary>
-													<div class="spollers__body">Unfortunately, I do not offer E-commerce at the moment.</div>
-												</details>
-												<details class="spollers__item">
-													<summary class="spollers__title">
-														<span>
-															The subscription plan, how does it
-                                            work?
-														</span>
-													</summary>
 													<div class="spollers__body">
-														The subscription model is a flexible way to get a professional website without a
-                                        large upfront cost.
-                                        You pay a fixed monthly fee, with a minimum contract of 12 months. After that,
-                                        you can cancel at any time. Since this is a service-based model that includes
-                                        ongoing support and maintenance, the website remains part of the subscription
-                                        and is not transferred if the service is cancelled.
+														<p data-i18n="main-page.faq.plans.question-3.answer.paragraph-1">Unfortunately, I do not offer E-commerce at the moment.</p>
 													</div>
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															If I choose the subscription model, can I buy
+														<span data-i18n="main-page.faq.plans.question-4.question">
+															The subscription plan,
+                                            how does it
+                                            work?
+														</span>
+													</summary>
+													<div class="spollers__body">
+														<p data-i18n="main-page.faq.plans.question-4.answer.paragraph-1">
+															The subscription model is a flexible way to get a professional website
+                                            without a
+                                            large upfront cost.
+                                            You pay a fixed monthly fee, with a minimum contract of 12 months. After
+                                            that,
+                                            you can cancel at any time. Since this is a service-based model that
+                                            includes
+                                            ongoing support and maintenance, the website remains part of the
+                                            subscription
+                                            and is not transferred if the service is cancelled.
+														</p>
+													</div>
+												</details>
+												<details class="spollers__item">
+													<summary class="spollers__title">
+														<span data-i18n="main-page.faq.plans.question-5.question">
+															If I choose the
+                                            subscription model, can I buy
                                             out of the subscription later?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														Yes, this option is available anytime after the first 12
-                                        months contract. The buyout price is calculated as 50% of the original website
-                                        cost.
+														<p data-i18n="main-page.faq.plans.question-5.answer.paragraph-1">
+															Yes, this option is available anytime after the first 12
+                                            months contract. The buyout price is calculated as 50% of the original
+                                            website
+                                            cost.
+														</p>
 													</div>
 												</details>
 											</div>
@@ -767,14 +809,17 @@ commodi.
 											<div data-fls-spollers="" data-fls-spollers-one="768,max" class="spollers">
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>What payment methods do you accept?</span>
+														<span data-i18n="main-page.faq.payments.question-1.question">
+															What payment methods
+                                            do you accept?
+														</span>
 													</summary>
 													<div class="spollers__body">
-														<p>
+														<p data-i18n="main-page.faq.payments.question-1.answer.paragraph-1">
 															I accept bank transfers, PayPal, and card payments via
                                             Stripe (including Visa and Mastercard).
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.payments.question-1.answer.paragraph-2">
 															If you prefer a different method, feel free to ask - I’ll do my best to
                                             accommodate.
 														</p>
@@ -782,17 +827,25 @@ commodi.
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>When do I need to make a payment?</span>
+														<span data-i18n="main-page.faq.payments.question-2.question">When do I need to
+                                            make a payment?</span>
 													</summary>
 													<div class="spollers__body">
-														<p>For one-time projects, the payment is split into two parts:</p>
-														<p>- 50% upfront to get started</p>
-														<p>- 50% once the website is completed</p>
-														<p>
+														<p data-i18n="main-page.faq.payments.question-2.answer.paragraph-1">
+															For one-time
+                                            projects, the payment is split into two parts:
+														</p>
+														<p data-i18n="main-page.faq.payments.question-2.answer.paragraph-2">- 50%
+                                            upfront to get started</p>
+														<p data-i18n="main-page.faq.payments.question-2.answer.paragraph-3">
+															- 50% once
+                                            the website is completed
+														</p>
+														<p data-i18n="main-page.faq.payments.question-2.answer.paragraph-4">
 															The final website is delivered and ready to go live after the second payment
                                             is received.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.payments.question-2.answer.paragraph-5">
 															For subscription plans, the first monthly payment is required before work
                                             begins. After that, payments continue on a monthly basis.
 														</p>
@@ -800,19 +853,22 @@ commodi.
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>What happens if my payment is late?</span>
+														<span data-i18n="main-page.faq.payments.question-3.question">
+															What happens if my
+                                            payment is late?
+														</span>
 													</summary>
 													<div class="spollers__body">
-														<p>
+														<p data-i18n="main-page.faq.payments.question-3.answer.paragraph-1">
 															If a payment is delayed, that’s usually not a problem -
                                             I understand that things can happen.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.payments.question-3.answer.paragraph-2">
 															I’ll simply reach out to remind you, and you can complete the payment as
                                             soon as
                                             possible.
 														</p>
-														<p>
+														<p data-i18n="main-page.faq.payments.question-3.answer.paragraph-3">
 															However, if payments are significantly delayed or repeatedly missed, the
                                             service
                                             may be temporarily paused until everything is up to date.
@@ -821,14 +877,16 @@ commodi.
 												</details>
 												<details class="spollers__item">
 													<summary class="spollers__title">
-														<span>
-															Do you work with international clients and
-                                            currencies?
+														<span data-i18n="main-page.faq.payments.question-4.question">
+															Do you work with
+                                            international clients and currencies?
 														</span>
 													</summary>
 													<div class="spollers__body">
-														Of course! I work with clients worldwide. Payments can
-                                        be made using internationally supported methods.
+														<p data-i18n="main-page.faq.payments.question-4.answer.paragraph-1">
+															Of course! I work with clients worldwide. Payments can
+                                            be made using internationally supported methods.
+														</p>
 													</div>
 												</details>
 											</div>
@@ -844,28 +902,28 @@ commodi.
 						</div>
 						<div class="contact__container">
 							<div class="contact__title-box-mobile title-box">
-								<h2 class="contact__title-mobile title">Let's talk!</h2>
+								<h2 class="contact__title-mobile title" data-i18n="main-page.contact.title">Let's talk!</h2>
 							</div>
 							<div class="contact__content">
 								<div class="contact__body">
 									<div class="contact__form form-contact">
-										<h2 class="contact__title">Let's talk!</h2>
+										<h2 class="contact__title" data-i18n="main-page.contact.title">Let's talk!</h2>
 										<!-- <h2 data-fls-dynamic=".contact__container, 768, 0" class="contact__title">Let's talk!</h2> -->
-										<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail/index.php" class="form-contact__body">
+										<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail/index.php" class="form-contact__body form">
 											<div class="form-contact__column">
 												<div class="form-contact__line">
-													<label class="form-contact__label" for="name">Name</label>
-													<input id="name" data-fls-input="" data-fls-form-errtext="Name required" required type="text" name="name" placeholder="Name" class="input form-contact__input">
+													<label class="form-contact__label" for="name" data-i18n="main-page.contact.form.name.label">Name</label>
+													<input id="name" data-fls-input="" data-fls-form-errtext="Name required" required type="text" name="name" placeholder="Name" data-i18n-placeholder="main-page.contact.form.name.placeholder" class="input form-contact__input">
 												</div>
 												<div class="form-contact__line">
-													<label class="form-contact__label" for="email">Email</label>
-													<input id="email" data-fls-input="" data-fls-form-errtext="Email error" required type="email" name="email" placeholder="Email" class="input form-contact__input">
+													<label class="form-contact__label" for="email" data-i18n="main-page.contact.form.email.label">Email</label>
+													<input id="email" data-fls-input="" data-fls-form-errtext="Email error" required type="email" name="email" placeholder="Email" data-i18n-placeholder="main-page.contact.form.email.placeholder" class="input form-contact__input">
 												</div>
 												<div data-fls-dynamic=".form-contact__column--last, 767.98, 1" class="form-contact__checkbox checkbox-contact-form">
-													<input data-fls-input="" id="contactUsAgreement" required class="input checkbox-contact-form__input" type="checkbox" value="1" name="agreement">
+													<input data-fls-input="" id="contactUsAgreement" required class="input checkbox-contact-form__input" type="checkbox" name="agreement">
 													<label for="contactUsAgreement" class="checkbox-contact-form__label">
 														<div class="checkbox-contact-form__text">
-															<span data-i18n="contact-us.form.agreement.text">
+															<span data-i18n="main-page.contact.form.agreement.text">
 																I consent to the
                                                 collection, processing or use of my personal data in accordance with
                                                 the privacy policy.
@@ -873,17 +931,23 @@ commodi.
 														</div>
 													</label>
 												</div>
+												<input class="form-contact__honey" type="text" tabindex="-1" name="company">
 											</div>
 											<div class="form-contact__column form-contact__column--last">
 												<div class="form-contact__line form-contact__line--textarea">
-													<label class="form-contact__label" for="message">Message</label>
-													<textarea id="message" data-fls-input="" autocomplete="off" name="message" placeholder="Message" class="input form-contact__input"></textarea>
+													<label class="form-contact__label" for="message" data-i18n="main-page.contact.form.message.label">Message</label>
+													<textarea id="message" data-fls-input="" autocomplete="off" name="message" placeholder="Example: Hi, I’m interested in a website for my business. It would be about 4-5 pages. I like clean, modern designs, but not sure how exactly I want it to look. Let me know how we can get started." data-i18n-placeholder="main-page.contact.form.message.placeholder" class="input form-contact__input"></textarea>
 												</div>
 												<button data-fls-dynamic=".form-contact__body, 767.98, 3" data-fls-button="" type="submit" class="form-contact__button button">
 													<span class="button__decor button__decor--left">w</span>
-													<span class="button__text">send</span>
+													<span class="button__text" data-i18n="main-page.contact.form.button">send</span>
 													<span class="button__decor button__decor--right">a</span>
 												</button>
+											</div>
+											<div class="form-contact__loader">
+												<video autoplay loop muted playsinline="">
+													<source src="./assets/video/loading.webm" type="video/webm">
+												</video>
 											</div>
 										</form>
 									</div>
@@ -908,7 +972,8 @@ commodi.
 							<span class="dot dot-5"></span>
 							<span class="dot dot-6"></span>
 							<span class="dot dot-7"></span>
-							<a class="info-footer__link" href="privacy-policy">Privacy Policy</a>
+							<a class="info-footer__link" href="privacy-policy" data-i18n="footer.menu.privacy-policy">Privacy
+					Policy</a>
 						</div>
 						<div class="info-footer__item">
 							<span class="dot dot-1"></span>
@@ -918,10 +983,15 @@ commodi.
 							<span class="dot dot-5"></span>
 							<span class="dot dot-6"></span>
 							<span class="dot dot-7"></span>
-							<a class="info-footer__link" href="legal-disclosure">Legal disclosure</a>
+							<a class="info-footer__link" href="legal-disclosure" data-i18n="footer.menu.legal-disclosure">Legal
+					disclosure</a>
 						</div>
-						<div class="info-footer__item">Contact Email: qwe@qwe.com</div>
-						<div class="info-footer__item">© 2026 Stormrage Web. All rights reserved.</div>
+						<div class="info-footer__item" data-i18n="footer.contact-email">Contact Email: contact@stormrageweb.com</div>
+						<div class="info-footer__item">
+							©
+							<span id="footer-copyright-year">2021</span>
+							<span data-i18n="footer.copyright">Stormrage Web. All rights reserved.</span>
+						</div>
 					</div>
 					<figure class="footer__logo">
 						<img alt="logo" src="./assets/img/logo/logo-white.avif">
@@ -929,13 +999,29 @@ commodi.
 					<div class="footer__button">
 						<a data-fls-scrollto="body" href="#" data-fls-button="" class="button">
 							<span class="button__decor button__decor--left">n</span>
-							<span class="button__text">Back to top</span>
+							<span class="button__text" data-i18n="footer.back-to-top">Back to top</span>
 							<span class="button__decor button__decor--right">k</span>
 						</a>
 						<!-- <a data-fls-scrollto="body" href="#" class="button"><span></span>Back to top</a> -->
 					</div>
 				</div>
 			</footer>
+		</div>
+		<div data-fls-popup="popup" aria-hidden="true" class="popup">
+			<div data-fls-popup-wrapper="" class="popup__wrapper">
+				<div data-fls-popup-body="" class="popup__body">
+					<button data-fls-popup-close="" type="button" class="popup__close">
+						<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square"></path>
+							<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square"></path>
+						</svg>
+					</button>
+					<div data-fls-popup-content="" class="popup__text" data-i18n="main-page.contact.popup">
+						<!-- Контент -->
+						Sent successfully!
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

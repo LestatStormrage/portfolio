@@ -1,10 +1,20 @@
 {
     "menu": {
         "link": {
+            "home": "Головна",
             "about": "Про мене",
             "projects": "Проєкти",
             "pricing": "Ціни",
-            "contact": "Контакт"
+            "contact": "Почати"
         }
+    },
+    "footer": {
+        "menu": {
+            "privacy-policy": "Політика конфіденційності",
+            "legal-disclosure": "Юридична інформація"
+        },
+        "contact-email": "Контактний email: contact@stormrageweb.com",
+        "copyright": "Stormrage Web. Всі права захищені.",
+        "back-to-top": "Нагору"
     }
 }

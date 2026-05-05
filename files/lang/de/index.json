@@ -1,8 +1,229 @@
 {
-    "projects": {
-        "title": "Meine Projekte"
-    },
-    "pricing": {
-        "title": "Preise"
+    "_metaTitle": "Stormrage Web",
+    "_metaDescription": "Schnelle, sichere und einzigartige Websites. Kontaktieren Sie mich und erhalten Sie die Website, die Sie benötigen.",
+    "main-page": {
+        "hero": {
+            "title": {
+                "main": "Stormrage",
+                "secondary": "web",
+                "description": "Schnelle, sichere und einzigartige Websites"
+            }
+        },
+        "about": {
+            "title": "Über mich",
+            "text": {
+                "paragraph-1": "Hi! Mein Name ist Ivan. Ich komme ursprünglich aus der Ukraine und lebe derzeit in Deutschland. Ich habe verschiedene Bereiche der IT ausprobiert und festgestellt, dass mir Webentwicklung am meisten Spaß macht.",
+                "paragraph-2": "Mit der Zeit habe ich festgestellt, dass viele Websites auf Page Buildern und vorgefertigten Themes basieren, was oft zu langsamer Performance, unnötiger Komplexität, eingeschränkter Flexibilität führt und insgesamt sehen viele Websites heutzutage mehr oder weniger gleich aus. Ich gehe einen anderen Weg - ich erstelle Websites von Grund auf und schreibe den gesamten Code selbst. Dadurch kann ich schnelle und sichere Websites mit individuellem Design erstellen.",
+                "paragraph-3": "Ich habe auch bemerkt, dass eine große Anfangsinvestition in eine gute Website nicht immer ideal oder erschwinglich ist, besonders für kleine Unternehmen. Deshalb biete ich zusätzlich ein abonnementbasiertes Modell an, um mehr Flexibilität zu schaffen. Bei diesem Modell zahlen Sie eine feste monatliche Gebühr anstelle eines hohen Einmalpreises. Das erleichtert die Planung und Verwaltung, insbesondere für kleine und wachsende Unternehmen."
+            }
+        },
+        "projects": {
+            "title": "Meine Projekte"
+        },
+        "pricing": {
+            "title": "Preise",
+            "description": {
+                "paragraph-1": "Jedes Website-Projekt ist einzigartig. Der endgültige Preis hängt von der Anzahl der Seiten, der Designkomplexität und den erforderlichen zusätzlichen Funktionen ab.",
+                "paragraph-2": "Die untenstehenden Pakete geben eine allgemeine Preisübersicht. Nach einem Gespräch über Ihr Projekt erstelle ich ein detailliertes Angebot, das auf Ihr Projekt zugeschnitten ist."
+            },
+            "tiers": {
+                "1": {
+                    "name": "Website für kleine Unternehmen",
+                    "price": "1900€",
+                    "description": "Eine einfache und saubere Website mit grundlegenden Funktionen. Perfekt für kleine Unternehmen oder persönliche Projekte.",
+                    "list-title": "Enthält:",
+                    "list-item": {
+                        "1": "- 1-3 Seiten",
+                        "2": "- Design + Entwicklung",
+                        "3": "- responsives Design (für alle Bildschirmgrößen)"
+                    }
+                },
+                "2": {
+                    "name": "Erweiterte individuelle Website",
+                    "price": "3200€",
+                    "description": "Eine Website mit anspruchsvollerem Design, mehr Seiten, zusätzlichen Funktionen und größerer Detailgenauigkeit. Ideal für Unternehmen, die eine stärkere visuelle Identität möchten.",
+                    "list-title": "Enthält:",
+                    "list-item": {
+                        "1": "- 4-6 Seiten",
+                        "2": "- erweitertes Design und Anpassung + Entwicklung",
+                        "3": "- responsives Design (für alle Bildschirmgrößen)",
+                        "4": "- Mehrsprachigkeit, Dark-/Light-Mode und Kontaktformular im Preis enthalten"
+                    }
+                },
+                "3": {
+                    "name": "Abonnement",
+                    "price": "160€ / Monat",
+                    "description": "Eine flexible Option ohne hohe Anfangskosten. Perfekt, wenn Sie die Investition über die Zeit verteilen möchten.",
+                    "list-title": "Enthält:",
+                    "list-item": {
+                        "1": "- 4-6 Seiten",
+                        "2": "- lebenslange Updates",
+                        "3": "- alle Zusätzliche Module sind im Preis enthalten (außer zusätzliche Seiten nach 6)",
+                        "4": "- erweitertes Design und Anpassung + Entwicklung",
+                        "5": "- responsives Design (für alle Bildschirmgrößen)"
+                    }
+                },
+                "most-popular": "am beliebtesten"
+            },
+            "modules": {
+                "title": "Zusätzliche Module",
+                "description": "Sie können Ihre Website je nach Bedarf mit zusätzlichen Funktionen erweitern. Einige davon sind im Paket „Erweiterte individuelle Website“ und im Abonnement enthalten.",
+                "additional-page": {
+                    "name": "Zusätzliche Seite",
+                    "price": "+120€ (pro Seite)"
+                },
+                "hosting": {
+                    "name": "Hosting",
+                    "price": "+25€/Monat"
+                },
+                "unlimited-edits": {
+                    "name": "Unbegrenzte Änderungen",
+                    "price": "+50€/Monat",
+                    "description": "(mindestens 12 Monate)"
+                },
+                "advanced-design": {
+                    "name": "Erweitertes Design & Anpassung",
+                    "price": "+300-1500€"
+                },
+                "multilingual": {
+                    "name": "Mehrsprachigkeit",
+                    "price": "+500€",
+                    "description": "+50€ pro Sprache"
+                },
+                "dark-light-mode": {
+                    "name": "Dark- / Light-Mode",
+                    "price": "+200€"
+                },
+                "contact-form": {
+                    "name": "Kontaktformular",
+                    "price": "+150€"
+                }
+            }
+        },
+        "faq": {
+            "title": "FAQ",
+            "tabs": {
+                "websites": "Websites",
+                "plans": "Pläne",
+                "payments": "Zahlungen"
+            },
+            "websites": {
+                "question-1": {
+                    "question": "Wie lange dauert die Erstellung der Website von Anfang bis Ende?",
+                    "answer": {
+                        "paragraph-1": "Das hängt von der Komplexität der Website und der Menge an Inhalten ab. Im Durchschnitt dauern die meisten Projekte zwischen 2 und 6 Wochen."
+                    }
+                },
+                "question-2": {
+                    "question": "Warum schreiben Sie den gesamten Code selbst, anstatt Website-Builder wie andere zu verwenden?",
+                    "answer": {
+                        "paragraph-1": "Die Entwicklung mit individuellem Code gibt mir volle Kontrolle über Design und Funktionalität, ohne durch Page Builder eingeschränkt zu sein.",
+                        "paragraph-2": "Außerdem sorgt es für sauberen und optimierten Code, was bei Page Buildern oft nicht der Fall ist. Dadurch erhalten Sie schnelle Ladezeiten und eine starke Performance.",
+                        "paragraph-3": "Da die Website nicht auf Drittanbieter-Plugins oder ständige WordPress-Updates angewiesen ist, ist sie außerdem deutlich stabiler und weniger anfällig für Sicherheitsprobleme."
+                    }
+                },
+                "question-3": {
+                    "question": "Erstellen Sie das Design meiner Website selbst?",
+                    "answer": {
+                        "paragraph-1": "Ja! Wenn Sie Ideen, Stilrichtungen oder Wünsche haben, teilen Sie diese gerne mit mir. Wenn Sie sich noch unsicher sind, wie Ihre Website aussehen soll - kein Problem! Ich entwickle Designvorschläge und wir besprechen diese gemeinsam."
+                    }
+                },
+                "question-4": {
+                    "question": "Übernehmen Sie das Hosting oder muss ich das selbst machen?",
+                    "answer": {
+                        "paragraph-1": "Das liegt ganz bei Ihnen. Sie können sich selbst darum kümmern oder ich übernehme alles für Sie - inklusive Einrichtung und Wartung. Dieser Service kostet 25€ pro Monat."
+                    }
+                }
+            },
+            "plans": {
+                "question-1": {
+                    "question": "Berechnen Sie Desktop- und Mobile-Versionen separat?",
+                    "answer": {
+                        "paragraph-1": "Nein! Alle Websites, die ich erstelle, sind vollständig responsiv und passen sich automatisch an verschiedene Bildschirmgrößen an. Desktop, Tablet oder Smartphone - Ihre Website sieht auf jedem Gerät gut aus."
+                    }
+                },
+                "question-2": {
+                    "question": "Was bedeutet „unbegrenzte Änderungen“ für 50€/Monat?",
+                    "answer": {
+                        "paragraph-1": "Mit dieser Option können Sie jederzeit kleinere Änderungen und Updates an Ihrer Website anfordern. Dazu gehören z. B. Textänderungen, Bildaustausch, Anpassungen von Abschnitten oder das Hinzufügen neuer Inhaltsblöcke.",
+                        "paragraph-2": "Der Service wird als monatliches Abonnement mit einer Mindestlaufzeit von 12 Monaten abgerechnet.",
+                        "paragraph-3": "Größere Änderungen wie komplett neue Seiten, umfangreiche Redesigns oder komplexe neue Funktionen sind nicht enthalten und werden separat berechnet."
+                    }
+                },
+                "question-3": {
+                    "question": "Ich möchte Produkte über meine Website verkaufen. Bieten Sie E-Commerce an?",
+                    "answer": {
+                        "paragraph-1": "Leider biete ich derzeit keinen E-Commerce an."
+                    }
+                },
+                "question-4": {
+                    "question": "Wie funktioniert das Abonnement-Modell?",
+                    "answer": {
+                        "paragraph-1": "Das Abonnement ist eine flexible Möglichkeit, eine professionelle Website ohne hohe Anfangskosten zu erhalten. Sie zahlen eine feste monatliche Gebühr mit einer Mindestlaufzeit von 12 Monaten. Danach können Sie jederzeit kündigen. Da es sich um ein Service-Modell mit laufendem Support und Wartung handelt, bleibt die Website Teil des Abonnements und wird bei Kündigung nicht übertragen."
+                    }
+                },
+                "question-5": {
+                    "question": "Kann ich die Website später aus dem Abonnement herauskaufen?",
+                    "answer": {
+                        "paragraph-1": "Ja, das ist jederzeit nach den ersten 12 Monaten möglich. Der Kaufpreis beträgt 50% der ursprünglichen Website-Kosten."
+                    }
+                }
+            },
+            "payments": {
+                "question-1": {
+                    "question": "Welche Zahlungsmethoden akzeptieren Sie?",
+                    "answer": {
+                        "paragraph-1": "Ich akzeptiere Banküberweisungen, PayPal und Kartenzahlungen über Stripe (einschließlich Visa und Mastercard).",
+                        "paragraph-2": "Wenn Sie eine andere Methode bevorzugen, sprechen Sie mich gerne an - ich versuche, eine Lösung zu finden."
+                    }
+                },
+                "question-2": {
+                    "question": "Wann muss ich bezahlen?",
+                    "answer": {
+                        "paragraph-1": "Bei einmaligen Projekten wird die Zahlung in zwei Teile aufgeteilt:",
+                        "paragraph-2": "- 50% im Voraus",
+                        "paragraph-3": "- 50% nach Fertigstellung der Website",
+                        "paragraph-4": "Die fertige Website wird nach Eingang der zweiten Zahlung bereitgestellt.",
+                        "paragraph-5": "Bei Abonnements ist die erste Zahlung vor Projektbeginn erforderlich, danach erfolgt die Abrechnung monatlich."
+                    }
+                },
+                "question-3": {
+                    "question": "Was passiert, wenn ich zu spät bezahle?",
+                    "answer": {
+                        "paragraph-1": "Wenn sich eine Zahlung verzögert, ist das in der Regel kein Problem - solche Dinge können passieren.",
+                        "paragraph-2": "Ich erinnere Sie einfach daran, und Sie können die Zahlung so bald wie möglich nachholen.",
+                        "paragraph-3": "Bei längeren oder wiederholten Verzögerungen kann der Service jedoch vorübergehend pausiert werden, bis alles ausgeglichen ist."
+                    }
+                },
+                "question-4": {
+                    "question": "Arbeiten Sie mit internationalen Kunden und Währungen?",
+                    "answer": {
+                        "paragraph-1": "Ja, natürlich! Ich arbeite mit Kunden weltweit. Zahlungen können über international verfügbare Methoden erfolgen."
+                    }
+                }
+            }
+        },
+        "contact": {
+            "title": "Kontaktieren Sie mich!",
+            "form": {
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Name"
+                },
+                "email": {
+                    "label": "E-Mail",
+                    "placeholder": "E-Mail"
+                },
+                "message": {
+                    "label": "Nachricht",
+                    "placeholder": "Beispiel: Hallo, ich interessiere mich für eine Website für mein Unternehmen. Sie soll etwa 4-5 Seiten umfassen. Ich mag ein sauberes, modernes Design, bin mir aber noch nicht ganz sicher, wie genau sie aussehen soll. Lassen Sie mich wissen, wie wir starten können."
+                },
+                "agreement": {
+                    "text": "Ich stimme der Erhebung, Verarbeitung und Nutzung meiner personenbezogenen Daten gemäß der Datenschutzerklärung zu."
+                },
+                "button": "Senden"
+            },
+            "popup": "Ihre Nachricht wurde erfolgreich gesendet!"
+        }
     }
 }

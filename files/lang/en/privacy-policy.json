@@ -1,0 +1,60 @@
+{
+    "_metaTitle": "Privacy Policy - Stormrage Web",
+    "_metaDescription": "Fast, secure and unique websites. Just contact me and get the website you need.",
+    "privacy-policy-page": {
+        "title": "Privacy Policy",
+        "general-information": {
+            "title": "General Information",
+            "text": {
+                "1": "This website processes personal data only to the extent necessary to provide a functional website and respond to inquiries.",
+                "2": "The processing of personal data is carried out in accordance with the General Data Protection Regulation (GDPR)."
+            }
+        },
+        "data-collection": {
+            "title": "Data collection on this website",
+            "contact-form": {
+                "title": "Contact Form",
+                "text": {
+                    "1": "When you contact me via the contact form, the data you provide (such as your name, email address, and message) will be processed for the purpose of handling your request.",
+                    "2": "This data is not stored in a database but is transmitted via email.",
+                    "3": "Legal basis: Art. 6-1b GDPR"
+                }
+            },
+            "hosting": {
+                "title": "Hosting",
+                "text": {
+                    "1": "This website is hosted by: Hetzner Online GmbH Industriestr. 25 91710 Gunzenhausen Germany",
+                    "2": "The hosting provider automatically collects and stores information in server log files (e.g. IP address, browser type, time of access) to ensure the technical operation and security of the website.",
+                    "3": "Legal basis: Art. 6-1f GDPR."
+                }
+            },
+            "local-storage": {
+                "title": "Local Storage",
+                "text": {
+                    "1": "This website uses the browser’s local storage to save user preferences such as selected language and theme (light/dark mode).",
+                    "2": "This information is stored only on your device and is not transmitted to the server."
+                }
+            }
+        },
+        "your-rights": {
+            "title": "Your Rights",
+            "text": {
+                "1": "You have the right to request access, correction, or deletion of your personal data, as well as to restrict processing or withdraw consent where applicable.",
+                "2": "You also have the right to lodge a complaint with a supervisory authority."
+            }
+        },
+        "data-retention": {
+            "title": "Data Retention",
+            "text": {
+                "1": "Personal data will only be processed as long as necessary to handle your request."
+            }
+        },
+        "contact": {
+            "title": "Contact",
+            "text": {
+                "1": "If you have any questions regarding this Privacy Policy, you can contact me at:",
+                "2": "contact@stormrageweb.com"
+            }
+        }
+    }
+}

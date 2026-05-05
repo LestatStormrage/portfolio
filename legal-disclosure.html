@@ -9,9 +9,9 @@
 		<!-- <link id="favicon" rel="shortcut icon" href="@img/favicon/favicon-black.ico"> -->
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon-black.ico" media="(prefers-color-scheme: light)">
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon-white.ico" media="(prefers-color-scheme: dark)">
-		<title>Legal disclosure</title>
-		<script defer src="./js/app.min.js?v=1777598588570"></script>
-		<link rel="stylesheet" defer href="./css/app.min.css?v=1777598588570">
+		<title>Legal Disclosure - Stormrage Web</title>
+		<script defer src="./js/app.min.js?v=1777998231938"></script>
+		<link rel="stylesheet" defer href="./css/app.min.css?v=1777998231938">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -39,36 +39,10 @@
 							<nav class="menu__body">
 								<div class="menu__block">
 									<ul class="menu__list">
-										<!--
-<li class="menu__item">
-<a href="/index.html#about" class="menu__link"><span
-class="menu__link-decor">a</span><span data-i18n="menu.link.about">About</span><span
-class="menu__link-decor">w</span></a>
-</li>
-<li class="menu__item">
-<a href="#" class="menu__link"><span
-class="menu__link-decor">d</span><span data-i18n="menu.link.projects">Projects</span><span
-class="menu__link-decor">b</span></a>
-</li>
-<li class="menu__item">
-<a href="#" class="menu__link"><span
-class="menu__link-decor">n</span><span data-i18n="menu.link.pricing">Pricing</span><span
-class="menu__link-decor">j</span></a>
-</li>
-<li class="menu__item">
-<a href="#" class="menu__link"><span class="menu__link-decor">h</span><span
-data-i18n="menu.link.faq">FAQ</span><span class="menu__link-decor">r</span></a>
-</li>
-<li class="menu__item">
-<a href="#" class="menu__link"><span
-class="menu__link-decor">o</span><span data-i18n="menu.link.contact">get started</span><span
-class="menu__link-decor">i</span></a>
-</li>
--->
 										<li class="menu__item">
-											<a href="index" class="menu__link">
+											<a href="/" class="menu__link">
 												<span class="menu__link-decor">o</span>
-												<span data-i18n="menu.link.contact">Home</span>
+												<span data-i18n="menu.link.home">Home</span>
 												<span class="menu__link-decor">i</span>
 											</a>
 										</li>
@@ -107,20 +81,20 @@ class="menu__link-decor">i</span></a>
 						<div data-fls-fireflies="" class="fireflies firefly--2"></div>
 						<div data-fls-fireflies="" class="fireflies firefly--3"></div>
 					</div>
-					<h1 class="legal-disclosure__title">Legal Disclosure</h1>
+					<h1 class="legal-disclosure__title" data-i18n="legal-disclosure.title">Legal Disclosure</h1>
 					<div class="legal-disclosure__body">
 						<div class="legal-disclosure__content">
 							<p>
-								Name:
-								<span>Ivan Dinarin</span>
+								<span class="legal-disclosure__name" data-i18n="legal-disclosure.name">Name:</span>
+								<span class="legal-disclosure__value" data-i18n="legal-disclosure.name-value">Ivan Dinarin</span>
 							</p>
 							<p>
-								Address:
-								<span>qwe qwe qwe</span>
+								<span class="legal-disclosure__name" data-i18n="legal-disclosure.address">Address:</span>
+								<span class="legal-disclosure__value" data-i18n="legal-disclosure.address-value">Vienweg 13, 13127 Berlin, Germany</span>
 							</p>
 							<p>
-								Email:
-								<span>qwe@qwe.com</span>
+								<span class="legal-disclosure__name" data-i18n="legal-disclosure.email">Email:</span>
+								<span class="legal-disclosure__value" data-i18n="legal-disclosure.email-value">stormrageweb@gmail.com</span>
 							</p>
 						</div>
 					</div>
@@ -139,7 +113,8 @@ class="menu__link-decor">i</span></a>
 							<span class="dot dot-5"></span>
 							<span class="dot dot-6"></span>
 							<span class="dot dot-7"></span>
-							<a class="info-footer__link" href="privacy-policy">Privacy Policy</a>
+							<a class="info-footer__link" href="privacy-policy" data-i18n="footer.menu.privacy-policy">Privacy
+					Policy</a>
 						</div>
 						<div class="info-footer__item">
 							<span class="dot dot-1"></span>
@@ -149,10 +124,15 @@ class="menu__link-decor">i</span></a>
 							<span class="dot dot-5"></span>
 							<span class="dot dot-6"></span>
 							<span class="dot dot-7"></span>
-							<a class="info-footer__link" href="legal-disclosure">Legal disclosure</a>
+							<a class="info-footer__link" href="legal-disclosure" data-i18n="footer.menu.legal-disclosure">Legal
+					disclosure</a>
 						</div>
-						<div class="info-footer__item">Contact Email: qwe@qwe.com</div>
-						<div class="info-footer__item">© 2026 Stormrage Web. All rights reserved.</div>
+						<div class="info-footer__item" data-i18n="footer.contact-email">Contact Email: contact@stormrageweb.com</div>
+						<div class="info-footer__item">
+							©
+							<span id="footer-copyright-year">2021</span>
+							<span data-i18n="footer.copyright">Stormrage Web. All rights reserved.</span>
+						</div>
 					</div>
 					<figure class="footer__logo">
 						<img alt="logo" src="./assets/img/logo/logo-white.avif">
@@ -160,7 +140,7 @@ class="menu__link-decor">i</span></a>
 					<div class="footer__button">
 						<a data-fls-scrollto="body" href="#" data-fls-button="" class="button">
 							<span class="button__decor button__decor--left">n</span>
-							<span class="button__text">Back to top</span>
+							<span class="button__text" data-i18n="footer.back-to-top">Back to top</span>
 							<span class="button__decor button__decor--right">k</span>
 						</a>
 						<!-- <a data-fls-scrollto="body" href="#" class="button"><span></span>Back to top</a> -->

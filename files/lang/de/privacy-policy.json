@@ -1,0 +1,60 @@
+{
+    "_metaTitle": "Datenschutzerklärung - Stormrage Web",
+    "_metaDescription": "Schnelle, sichere und einzigartige Websites. Kontaktieren Sie mich und erhalten Sie die Website, die Sie benötigen.",
+    "privacy-policy-page": {
+        "title": "Datenschutzerklärung",
+        "general-information": {
+            "title": "Allgemeine Informationen",
+            "text": {
+                "1": "Diese Website verarbeitet personenbezogene Daten nur in dem Umfang, der zur Bereitstellung einer funktionsfähigen Website und zur Beantwortung von Anfragen erforderlich ist.",
+                "2": "Die Verarbeitung personenbezogener Daten erfolgt gemäß der Datenschutz-Grundverordnung (DSGVO)."
+            }
+        },
+        "data-collection": {
+            "title": "Datenerfassung auf dieser Website",
+            "contact-form": {
+                "title": "Kontaktformular",
+                "text": {
+                    "1": "Wenn Sie mich über das Kontaktformular kontaktieren, werden die von Ihnen angegebenen Daten (wie Name, E-Mail-Adresse und Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet.",
+                    "2": "Diese Daten werden nicht in einer Datenbank gespeichert, sondern per E-Mail übermittelt.",
+                    "3": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO"
+                }
+            },
+            "hosting": {
+                "title": "Hosting",
+                "text": {
+                    "1": "Diese Website wird gehostet von: Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland",
+                    "2": "Der Hosting-Anbieter erhebt und speichert automatisch Informationen in Server-Log-Dateien (z. B. IP-Adresse, Browsertyp, Zeitpunkt des Zugriffs), um den technischen Betrieb und die Sicherheit der Website zu gewährleisten.",
+                    "3": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO."
+                }
+            },
+            "local-storage": {
+                "title": "Local Storage",
+                "text": {
+                    "1": "Diese Website verwendet den lokalen Speicher Ihres Browsers, um Benutzereinstellungen wie Sprache und Theme (Hell-/Dunkelmodus) zu speichern.",
+                    "2": "Diese Informationen werden ausschließlich auf Ihrem Gerät gespeichert und nicht an den Server übertragen."
+                }
+            }
+        },
+        "your-rights": {
+            "title": "Ihre Rechte",
+            "text": {
+                "1": "Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer personenbezogenen Daten sowie auf Einschränkung der Verarbeitung oder Widerruf Ihrer Einwilligung, soweit zutreffend.",
+                "2": "Sie haben außerdem das Recht, eine Beschwerde bei einer Aufsichtsbehörde einzureichen."
+            }
+        },
+        "data-retention": {
+            "title": "Speicherdauer",
+            "text": {
+                "1": "Personenbezogene Daten werden nur so lange verarbeitet, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist."
+            }
+        },
+        "contact": {
+            "title": "Kontakt",
+            "text": {
+                "1": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, können Sie mich unter folgender Adresse kontaktieren:",
+                "2": "contact@stormrageweb.com"
+            }
+        }
+    }
+}

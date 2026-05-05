@@ -1,16 +1,229 @@
 {
-    "menu": {
-        "link": {
-            "about": "About",
-            "projects": "Projects",
-            "pricing": "Pricing",
-            "contact": "Contact"
+    "_metaTitle": "Stormrage Web",
+    "_metaDescription": "Fast, secure and unique websites. Just contact me and get the website you need.",
+    "main-page": {
+        "hero": {
+            "title": {
+                "main": "Stormrage",
+                "secondary": "web",
+                "description": "Fast, secure and unique websites"
+            }
+        },
+        "about": {
+            "title": "About me",
+            "text": {
+                "paragraph-1": "Hi! My name is Ivan. I’m originally from Ukraine, currently based in Germany. I’ve explored different areas in IT and found web development to be the one I enjoy the most.",
+                "paragraph-2": "Over time, I noticed that many websites rely on page builders and pre-made themes, which often results in slow performance, unnecessary complexity, limited flexibility, and overall many websites today look more or less the same. I take a different approach - I build websites from scratch, writing all code manually. This allows me to create fast and secure websites with custom design.",
+                "paragraph-3": "I also noticed that a large upfront investment in a good website isn’t always ideal or affordable, especially for small businesses. This is why, to make things more flexible, I also offer a subscription-based option. With this model, you pay a fixed monthly fee instead of a large upfront price. This makes it easier to plan and manage, especially for small and growing businesses."
+            }
+        },
+        "projects": {
+            "title": "My projects"
+        },
+        "pricing": {
+            "title": "Pricing",
+            "description": {
+                "paragraph-1": "Every website project is unique. The final cost depends on the number of pages, design complexity, and additional functionality required.",
+                "paragraph-2": "The packages below provide a general idea of pricing. After discussing your project, I will provide a detailed quote special to your project."
+            },
+            "tiers": {
+                "1": {
+                    "name": "Small Business Website",
+                    "price": "€1900",
+                    "description": "A simple and clean website with essential features. Perfect for small businesses or personal projects.",
+                    "list-title": "Includes:",
+                    "list-item": {
+                        "1": "- 1-3 pages",
+                        "2": "- design + development",
+                        "3": "- responsive design (for all screen sizes)"
+                    }
+                },
+                "2": {
+                    "name": "Advanced Custom Website",
+                    "price": "€3200",
+                    "description": "A website with more advanced design, more pages, features, and greater attention to detail. Ideal for businesses that want a stronger visual identity.",
+                    "list-title": "Includes:",
+                    "list-item": {
+                        "1": "- 4-6 pages",
+                        "2": "- advanced design and customization + development",
+                        "3": "- responsive design (for all screen sizes)",
+                        "4": "- multilingual support, dark-light mode, contact form are included in the price"
+                    }
+                },
+                "3": {
+                    "name": "Subscription",
+                    "price": "€160 / month",
+                    "description": "A flexible option with no large upfront cost. Perfect if you prefer to spread the investment over time.",
+                    "list-title": "Includes:",
+                    "list-item": {
+                        "1": "- 4-6 pages",
+                        "2": "- lifetime updates",
+                        "3": "- everything from the additional modules list is included in the price (other than additional pages fee after 6)",
+                        "4": "- advanced design and customization + development",
+                        "5": "- responsive design (for all screen sizes)"
+                    }
+                },
+                "most-popular": "most popular"
+            },
+            "modules": {
+                "title": "Additional modules",
+                "description": "You can extend your website with additional functionality depending on your needs. Some of these are included in \"Advanced Custom Website\" tier and subscription plan.",
+                "additional-page": {
+                    "name": "Additional page",
+                    "price": "+ €120 (per page)"
+                },
+                "hosting": {
+                    "name": "Hosting",
+                    "price": "+ €25/month"
+                },
+                "unlimited-edits": {
+                    "name": "Unlimited edits",
+                    "price": "+ €50/month",
+                    "description": "(12 months minimum)"
+                },
+                "advanced-design": {
+                    "name": "Advanced design & customization",
+                    "price": "+ €300 - €1500"
+                },
+                "multilingual": {
+                    "name": "Multilingual support",
+                    "price": "+ €500",
+                    "description": "+ €50 per language"
+                },
+                "dark-light-mode": {
+                    "name": "Dark / light mode",
+                    "price": "+ €200"
+                },
+                "contact-form": {
+                    "name": "Contact form",
+                    "price": "+ €150"
+                }
+            }
+        },
+        "faq": {
+            "title": "FAQ",
+            "tabs": {
+                "websites": "Websites",
+                "plans": "plans",
+                "payments": "payments"
+            },
+            "websites": {
+                "question-1": {
+                    "question": "How long does the website take from start to finish?",
+                    "answer": {
+                        "paragraph-1": "This depends of the complexity of the website and the amount of content. In average, most projects take between 2-6 weeks."
+                    }
+                },
+                "question-2": {
+                    "question": "Why do you write all code by hand instead of using web page builders like the others do?",
+                    "answer": {
+                        "paragraph-1": "Building websites with custom code gives me full control over design and functionality, without being limited by page builders.",
+                        "paragraph-2": "It also ensures that the code is clean and optimized, which is often not the case with page builders. As a result you're getting fast load times and great performance.",
+                        "paragraph-3": "And since the website doesn’t rely on third-party plugins or constant Wordpress updates, it’s also much more stable and much less vulnerable to security issues."
+                    }
+                },
+                "question-3": {
+                    "question": "Will you make the design for my website yourself?",
+                    "answer": {
+                        "paragraph-1": "Yes! If you have any ideas, style direction, preferences or other wishes - feel free to share them with me! If you’re not sure how your website should look - that's totally fine! You can leave that to me and I'll share my design ideas with you and we'll discuss them together."
+                    }
+                },
+                "question-4": {
+                    "question": "Will you host my website or do I have to make it myself?",
+                    "answer": {
+                        "paragraph-1": "That’s completely up to you. You can do it yourself or I can take care of everything for you - including setup and maintenance. That is available for 25€ per month."
+                    }
+                }
+            },
+            "plans": {
+                "question-1": {
+                    "question": "Do you charge for desktop and mobile version of the website separately?",
+                    "answer": {
+                        "paragraph-1": "No! All websites I build are fully responsive, meaning they automatically adapt to different screen sizes. Desktop, tablet, mobile - it'll look great on any device!"
+                    }
+                },
+                "question-2": {
+                    "question": "What does “unlimited edits” for 50€/month mean?",
+                    "answer": {
+                        "paragraph-1": "The unlimited edits option allows you to request small updates and changes to your website whenever needed. This includes minor layout adjustments, so things like updating text, replacing images, adjusting sections, or adding new content blocks.",
+                        "paragraph-2": "The service is billed as a fixed monthly subscription with a minimum contract of 12 months.",
+                        "paragraph-3": "It doesn’t cover larger changes such as creating entirely new pages, major redesigns, or adding complex new features - those are handled as separate work."
+                    }
+                },
+                "question-3": {
+                    "question": "I want to sell products through my website. Do you offer E-commerce?",
+                    "answer": {
+                        "paragraph-1": "Unfortunately, I do not offer E-commerce at the moment."
+                    }
+                },
+                "question-4": {
+                    "question": "The subscription plan, how does it work?",
+                    "answer": {
+                        "paragraph-1": "The subscription model is a flexible way to get a professional website without a large upfront cost. You pay a fixed monthly fee, with a minimum contract of 12 months. After that, you can cancel at any time. Since this is a service-based model that includes ongoing support and maintenance, the website remains part of the subscription and is not transferred if the service is cancelled."
+                    }
+                },
+                "question-5": {
+                    "question": "If I choose the subscription model, can I buy out of the subscription later?",
+                    "answer": {
+                        "paragraph-1": "Yes, this option is available anytime after the first 12 months contract. The buyout price is calculated as 50% of the original website cost."
+                    }
+                }
+            },
+            "payments": {
+                "question-1": {
+                    "question": "What payment methods do you accept?",
+                    "answer": {
+                        "paragraph-1": "I accept bank transfers, PayPal, and card payments via Stripe (including Visa and Mastercard).",
+                        "paragraph-2": "If you prefer a different method, feel free to ask - I’ll do my best to accommodate."
+                    }
+                },
+                "question-2": {
+                    "question": "When do I need to make a payment?",
+                    "answer": {
+                        "paragraph-1": "For one-time projects, the payment is split into two parts:",
+                        "paragraph-2": "- 50% upfront to get started",
+                        "paragraph-3": "- 50% once the website is completed",
+                        "paragraph-4": "The final website is delivered and ready to go live after the second payment is received.",
+                        "paragraph-5": "For subscription plans, the first monthly payment is required before work begins. After that, payments continue on a monthly basis."
+                    }
+                },
+                "question-3": {
+                    "question": "What happens if my payment is late?",
+                    "answer": {
+                        "paragraph-1": "If a payment is delayed, that’s usually not a problem - I understand that things can happen.",
+                        "paragraph-2": "I’ll simply reach out to remind you, and you can complete the payment as soon as possible.",
+                        "paragraph-3": "However, if payments are significantly delayed or repeatedly missed, the service may be temporarily paused until everything is up to date."
+                    }
+                },
+                "question-4": {
+                    "question": "Do you work with international clients and currencies?",
+                    "answer": {
+                        "paragraph-1": "Of course! I work with clients worldwide. Payments can be made using internationally supported methods."
+                    }
+                }
+            }
+        },
+        "contact": {
+            "title": "Let's talk!",
+            "form": {
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Name"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "Email"
+                },
+                "message": {
+                    "label": "Message",
+                    "placeholder": "Example: Hi, I’m interested in a website for my business. It would be about 4-5 pages. I like clean, modern designs, but not sure how exactly I want it to look. Let me know how we can get started."
+                },
+                "agreement": {
+                    "text": "I consent to the collection, processing or use of my personal data in accordance with the privacy policy."
+                },
+                "button": "send"
+            },
+            "popup": "Your message was sent successfully!"
         }
-    },
-    "pricing": {
-        "title": "Pricing"
-    },
-    "projects": {
-        "title": "My projects"
     }
 }

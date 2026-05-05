@@ -1,20 +1,29 @@
 <?php
 // Налаштування відправки
 require 'config.php';
-
+if (!empty($_POST['company'])) {
+    exit; // bot detected
+}
 //Від кого лист
-$mail->setFrom('some@gmail.com', 'Лист від ЧФ4'); // Вказати потрібний E-mail
-//Кому відправити
-$mail->addAddress('some@gmail.com'); // Вказати потрібний E-mail
+$mail->setFrom('info@stormrageweb.com', 'Stormrage Web'); // Вказати потрібний E-mail
+//Кому відправити 
+$mail->addAddress('clients@stormrageweb.com'); // Вказати потрібний E-mail
 //Тема листа
-$mail->Subject = 'Вітання! Це Чертоги Фрілансера 4';
+$mail->Subject = 'You have a message from a potential client!';
 
 //Тіло листа
-$body = '<h1>Зустрічайте супер листа!</h1>';
+$body = '<h1>New client!</h1>';
 
-//if(trim(!empty($_POST['email']))){
-//$body.=$_POST['email'];
-//}	
+if(trim(!empty($_POST['name']))){
+	$body.= '<p>Name: '.$_POST['name'].'</p>';
+}	
+if(trim(!empty($_POST['email']))){
+	$body.= '<p>Email: '.$_POST['email'].'</p>';
+}	
+if(trim(!empty($_POST['message']))){
+	$body.= '<p>Message: '.$_POST['message'].'</p>';
+}	
+
 
 /*
 	//Прикріпити файл
@@ -34,9 +43,9 @@ $mail->Body = $body;
 
 //Відправляємо
 if (!$mail->send()) {
-	$message = 'Помилка';
+	$message = 'Error';
 } else {
-	$message = 'Дані надіслані!';
+	$message = 'Message sent!';
 }
 
 $response = ['message' => $message];

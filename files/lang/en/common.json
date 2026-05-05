@@ -1,10 +1,20 @@
 {
     "menu": {
         "link": {
+            "home": "Home",
             "about": "About",
             "projects": "Projects",
             "pricing": "Pricing",
-            "contact": "Contact"
+            "contact": "get started"
         }
+    },
+    "footer": {
+        "menu": {
+            "privacy-policy": "Privacy Policy",
+            "legal-disclosure": "Legal disclosure"
+        },
+        "contact-email": "Contact Email: contact@stormrageweb.com",
+        "copyright": "Stormrage Web. All rights reserved.",
+        "back-to-top": "Back to top"
     }
 }
